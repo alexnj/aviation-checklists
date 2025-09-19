@@ -1,0 +1,69 @@
+name: Build Checklists
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout current repository
+      uses: actions/checkout@v3
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+
+    - name: Checkout EFIS file format editor repository
+      uses: actions/checkout@v3
+      with:
+        repository: rdamazio/efis-editor
+        path: efis-editor
+
+    - name: Install efis-editor dependencies
+      run: npm install
+      working-directory: efis-editor
+
+    - name: Generate efis-editor protobuf files
+      run: npm run genproto
+      working-directory: efis-editor
+
+    - name: Generate efis-editor keys
+      run: npm run genkeys
+      working-directory: efis-editor
+
+    - name: Install converters dependencies
+      run: npm install
+      working-directory: converters
+
+    - name: Compile Converters' Typescript
+      working-directory: efis-editor
+      run: npx tsc ../converters/*.ts --module commonjs --esModuleInterop --target es2022 --lib es2022,dom --skipLibCheck
+
+    - name: Convert Checklist JSONs to EFIS
+      run: |
+        mkdir -p output
+        for file in checklists/**/*.json; do
+          echo "Found checklist $file."
+          for compiler in converters/compile*.js; do
+            echo "Using compiler $compiler,"
+            if [ -f "$compiler" ]; then
+              if [ -f "$file" ]; then
+                filename=$(basename "$file" .json)
+                dirname=$(dirname "$file")
+                mkdir -p "output/$dirname"
+                node "$compiler" "$file" "output/$dirname"
+              fi
+            fi
+          done
+        done
+
+    - name: Upload EFIS checklists
+      uses: actions/upload-artifact@v3
+      with:
+        name: Checklists
+        path: output/
