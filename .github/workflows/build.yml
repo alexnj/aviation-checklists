@@ -11,15 +11,15 @@ jobs:
 
     steps:
     - name: Checkout current repository
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
     - name: Set up Node.js
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@v4
       with:
         node-version: '18'
 
     - name: Checkout EFIS file format editor repository
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
       with:
         repository: rdamazio/efis-editor
         path: efis-editor
@@ -63,7 +63,7 @@ jobs:
         done
 
     - name: Upload EFIS checklists
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: Checklists
         path: output/
