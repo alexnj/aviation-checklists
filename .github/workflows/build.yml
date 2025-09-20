@@ -47,7 +47,7 @@ jobs:
     - name: Convert Checklist JSONs to EFIS
       run: |
         mkdir -p output
-        for file in checklists/**/*.json; do
+        find checklists -type f -name "*.json" | while read -r file; do
           echo "Found checklist $file."
           for compiler in converters/compile*.js; do
             echo "Using compiler $compiler,"
@@ -62,8 +62,19 @@ jobs:
           done
         done
 
-    - name: Upload EFIS checklists
-      uses: actions/upload-artifact@v4
-      with:
-        name: Checklists
-        path: output/
+    - name: Setup gh actions artifact client
+      uses: lhotari/gh-actions-artifact-client@v2
+
+    - name: Upload artifacts
+      run: |
+        find output -type f | while read -r file; do
+          name=$(basename "$file")
+          echo "Uploading $name, file: $file"
+          zip - "$file" | gh-actions-artifact-client.js upload "${name}" --retentionDays=7
+        done
+
+    # - name: Upload EFIS checklists
+    #   uses: actions/upload-artifact@v4
+    #   with:
+    #     name: Checklists
+    #     path: output/
