@@ -10,71 +10,74 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout current repository
-      uses: actions/checkout@v4
+      - name: Checkout current repository
+        uses: actions/checkout@v4
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: '24'
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
 
-    - name: Checkout EFIS file format editor repository
-      uses: actions/checkout@v4
-      with:
-        repository: rdamazio/efis-editor
-        path: efis-editor
+      - name: Checkout EFIS file format editor repository
+        uses: actions/checkout@v4
+        with:
+          repository: rdamazio/efis-editor
+          path: efis-editor
 
-    - name: Install efis-editor dependencies
-      run: npm install
-      working-directory: efis-editor
+      - name: Install efis-editor dependencies
+        run: npm install
+        working-directory: efis-editor
 
-    - name: Generate efis-editor protobuf files
-      run: npm run genproto
-      working-directory: efis-editor
+      - name: Generate efis-editor protobuf files
+        run: npm run genproto
+        working-directory: efis-editor
 
-    - name: Generate efis-editor keys
-      run: npm run genkeys
-      working-directory: efis-editor
+      - name: Generate efis-editor keys
+        run: npm run genkeys
+        working-directory: efis-editor
 
-    - name: Install converters dependencies
-      run: npm install
-      working-directory: converters
+      - name: Install converters dependencies
+        run: npm install
+        working-directory: converters
 
-    - name: Compile Converters' Typescript
-      working-directory: efis-editor
-      run: npx tsc ../converters/*.ts --module commonjs --esModuleInterop --target es2022 --lib es2022,dom --skipLibCheck
+      - name: Compile Converters' Typescript
+        working-directory: efis-editor
+        run: npx tsc ../converters/*.ts --module commonjs --esModuleInterop --target es2022 --lib es2022,dom --skipLibCheck
 
-    - name: Convert Checklist JSONs to EFIS
-      run: |
-        mkdir -p output
-        find checklists -type f -name "*.json" | while read -r file; do
-          echo "Found checklist $file."
-          for compiler in converters/compile*.js; do
-            echo "Using compiler $compiler,"
-            if [ -f "$compiler" ]; then
-              if [ -f "$file" ]; then
-                filename=$(basename "$file" .json)
-                dirname=$(dirname "$file")
-                mkdir -p "output/$dirname"
-                node "$compiler" "$file" "output/$dirname"
+      - name: Convert Checklist JSONs to EFIS
+        run: |
+          mkdir -p output
+          find checklists -type f -name "*.json" | while read -r file; do
+            echo "Found checklist $file."
+            for compiler in converters/compile*.js; do
+              echo "Using compiler $compiler,"
+              if [ -f "$compiler" ]; then
+                if [ -f "$file" ]; then
+                  filename=$(basename "$file" .json)
+                  dirname=$(dirname "$file")
+                  mkdir -p "output/$dirname"
+                  node "$compiler" "$file" "output/$dirname"
+                fi
               fi
-            fi
+            done
           done
-        done
 
-    - name: Setup gh actions artifact client
-      uses: lhotari/gh-actions-artifact-client@v2
+      - name: Setup gh actions artifact client
+        uses: lhotari/gh-actions-artifact-client@v2
 
-    - name: Upload artifacts
-      run: |
-        find output -type f | while read -r file; do
-          name=$(basename "$file")
-          echo "Uploading $name, file: $file"
-          zip - "$file" | gh-actions-artifact-client.js upload "${name}" --retentionDays=7
-        done
+      - name: Upload artifacts
+        run: |
+          find output -type f | while read -r file; do
+            name=$(basename "$file")
+            echo "Uploading $name, file: $file"
+            zip - "$file" | gh-actions-artifact-client.js upload "${name}" --retentionDays=7
+          done
 
-    # - name: Upload EFIS checklists
-    #   uses: actions/upload-artifact@v4
-    #   with:
-    #     name: Checklists
-    #     path: output/
+      - uses: 'marvinpinto/action-automatic-releases@latest'
+        with:
+          repo_token: '${{ secrets.GITHUB_TOKEN }}'
+          automatic_release_tag: 'latest'
+          prerelease: true
+          title: 'Automatic Release Build'
+          files: |
+            *.zip
