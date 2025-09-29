@@ -70,7 +70,7 @@ jobs:
           mkdir output-release
           find output -type f | while read -r file; do
             name=${file##*checklists/}
-            final_name=${name//\//-}
+            final_name=${name//\//\.}
             echo "Uploading $name, file: $final_name"
             cp "$file" "output-release/$final_name"
             cat "$file" | gh-actions-artifact-client.js upload "${final_name}" --retentionDays=7
