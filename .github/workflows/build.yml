@@ -71,7 +71,9 @@ jobs:
           find output -type f | while read -r file; do
             name=$(basename "$file")
             echo "Uploading $name, file: $file"
-            zip - "$file" | tee "output-release/${name}" | gh-actions-artifact-client.js upload "${name}" --retentionDays=7
+            # zip - "$file" | tee "output-release/${name}" | gh-actions-artifact-client.js upload "${name}" --retentionDays=7
+            cp "$file" "output-release/$name"
+            cat "$file" | gh-actions-artifact-client.js upload "${name}" --retentionDays=7
           done
 
       - uses: 'marvinpinto/action-automatic-releases@latest'
@@ -81,5 +83,4 @@ jobs:
           prerelease: true
           title: 'Automatic Release Build'
           files: |
-            *.zip
             output-release/*
