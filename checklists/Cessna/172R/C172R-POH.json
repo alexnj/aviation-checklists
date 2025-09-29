@@ -1,0 +1,1705 @@
+{
+  "metadata": {
+    "name": "C172R",
+    "makeAndModel": "Cessna 172R Skyhawk",
+    "aircraftInfo": "N-NUMBER",
+    "modifiedTime": 1726874627
+  },
+  "groups": [
+    {
+      "title": "Normal Procedures",
+      "category": "normal",
+      "checklists": [
+        {
+          "title": "Preflight Inspection",
+          "items": [
+            {
+              "type": "ITEM_TITLE",
+              "prompt": "CABIN"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Pitot Tube Cover",
+              "expectation": "REMOVE"
+            },
+            {
+              "type": "ITEM_PLAINTEXT",
+              "prompt": "Check for pitot blockage.",
+              "indent": 1
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Pilot's Operating Handbook",
+              "expectation": "AVAILABLE IN THE AIRPLANE"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Airplane Weight and Balance",
+              "expectation": "CHECKED"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Parking Brake",
+              "expectation": "SET"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Control Wheel Lock",
+              "expectation": "REMOVE"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Ignition Switch",
+              "expectation": "OFF"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Avionics Master Switch",
+              "expectation": "OFF"
+            },
+            {
+              "type": "ITEM_WARNING",
+              "prompt": "WHEN TURNING ON THE MASTER SWITCH, USING AN EXTERNAL POWER SOURCE, OR PULLING THE PROPELLER THROUGH BY HAND, TREAT THE PROPELLER AS IF THE IGNITION SWITCH WERE ON. DO NOT STAND, NOR ALLOW ANYONE ELSE TO STAND, WITHIN THE ARC OF THE PROPELLER, SINCE A LOOSE OR BROKEN WIRE OR A COMPONENT MALFUNCTION COULD CAUSE THE PROPELLER TO ROTATE."
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Master Switch",
+              "expectation": "ON"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Fuel Quantity Indicators",
+              "expectation": "CHECK QUANTITY"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Low Fuel Annunciators (L LOW FUEL R)",
+              "expectation": "EXTINGUISHED"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Avionics Master Switch",
+              "expectation": "ON"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Avionics Cooling Fan",
+              "expectation": "CHECK AUDIBLY FOR OPERATION"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Avionics Master Switch",
+              "expectation": "OFF"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Static Pressure Alternate Source Valve",
+              "expectation": "OFF"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Annunciator Panel Switch",
+              "expectation": "HOLD IN TST POSITION "
+            },
+            {
+              "type": "ITEM_PLAINTEXT",
+              "prompt": "Ensure all annunciators illuminate",
+              "indent": 1
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Annunciator Panel Switch",
+              "expectation": "RELEASE"
+            },
+            {
+              "type": "ITEM_PLAINTEXT",
+              "prompt": "Check that appropriate annunicators remain on",
+              "indent": 1
+            },
+            {
+              "type": "ITEM_NOTE",
+              "prompt": "When Master Switch is turned ON, some annunciators will flash for approximately 10 seconds before illuminating steadily. When panel TST switch is toggled up and held in position, all remaining lights will flash until the switch is released.",
+              "indent": 1
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Fuel Selector Valve",
+              "expectation": "BOTH"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Fuel Shutoff Valve",
+              "expectation": "ON (Push Full In)"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Flaps",
+              "expectation": "EXTEND"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Pitot Heat",
+              "expectation": "ON"
+            },
+            {
+              "prompt": "Carefully check that pitot tube is warm to the touch within 30 seconds.",
+              "type": "ITEM_PLAINTEXT",
+              "indent": 1
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Pitot Heat",
+              "expectation": "OFF"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Master Switch",
+              "expectation": "OFF"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Elevator Trim",
+              "expectation": "SET for takeoff"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Baggage Door",
+              "expectation": "CHECK, lock with key"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Autopilot Static Source Opening (if installed)",
+              "expectation": "CHECK for blockage"
+            },
+            {
+              "type": "ITEM_TITLE",
+              "prompt": "EMPENNAGE"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Rudder Gust Lock (if installed)",
+              "expectation": "REMOVE"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Tail Tie-Down",
+              "expectation": "DISCONNECT"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Control Surfaces",
+              "expectation": "CHECK"
+            },
+            {
+              "type": "ITEM_PLAINTEXT",
+              "prompt": "Check freedom of movement and security",
+              "indent": 1
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Trim Tab",
+              "expectation": "CHECK security"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Antennas",
+              "expectation": "CHECK"
+            },
+            {
+              "type": "ITEM_PLAINTEXT",
+              "prompt": "Check for security of attachment and general condition",
+              "indent": 1
+            },
+            {
+              "type": "ITEM_TITLE",
+              "prompt": "RIGHT WING Trailing Edge"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Aileron",
+              "expectation": "CHECK"
+            },
+            {
+              "type": "ITEM_PLAINTEXT",
+              "prompt": "Check freedom of movement and security",
+              "indent": 1
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Flap",
+              "expectation": "CHECK"
+            },
+            {
+              "type": "ITEM_PLAINTEXT",
+              "prompt": "Check for security and condition",
+              "indent": 1
+            },
+            {
+              "type": "ITEM_TITLE",
+              "prompt": "RIGHT WING"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Wing Tie-Down",
+              "expectation": "DISCONNECT"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Main Wheel Tire",
+              "expectation": "CHECK"
+            },
+            {
+              "type": "ITEM_PLAINTEXT",
+              "prompt": "Check for proper inflation and general condition (weather checks, tread depth and wear, etc.)",
+              "indent": 1
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Fuel Tank Sump Quick Drain Valves",
+              "expectation": "DRAIN a cupful"
+            },
+            {
+              "type": "ITEM_PLAINTEXT",
+              "prompt": "DRAIN at least a cupful of fuel (using sampler cup) from each sump location to check for water, sediment, and proper fuel grade before each flight and after each refueling. If water is observed, take further samples until clear and then gently rock wings and lower tail to the ground to move any additional contaminants to the sampling points. Take repeated samples from all fuel drain points until all contamination has been removed. If contaminants are still present, refer to WARNING below and do not fly airplane.",
+              "indent": 1
+            },
+            {
+              "type": "ITEM_WARNING",
+              "prompt": "IF, AFTER REPEATED SAMPLING, EVIDENCE OF CONTAMINATION STILL EXISTS, THE AIRPLANE SHOULD NOT BE FLOWN. TANKS SHOULD BE DRAINED AND SYSTEM PURGED BY QUALIFIED MAINTENANCE PERSONNEL. ALL EVIDENCE OF CONTAMINATION MUST BE REMOVED BEFORE FURTHER FLIGHT."
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Fuel Quantity",
+              "expectation": "CHECK VISUALLY for desired level"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Fuel Filler Cap",
+              "expectation": "SECURE and VENT UNOBSTRUCTED"
+            },
+            {
+              "type": "ITEM_TITLE",
+              "prompt": "NOSE"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Fuel Strainer Quick Drain Valve",
+              "expectation": "DRAIN"
+            },
+            {
+              "type": "ITEM_PLAINTEXT",
+              "prompt": "Drain at least a cupful of fuel to check for water, sediment, and proper fuel grade",
+              "indent": 1
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Engine Oil Dipstick/Filler Cap",
+              "expectation": "CHECK oil level, then check dipstick/filler cap SECURE. "
+            },
+            {
+              "type": "ITEM_WARNING",
+              "prompt": "Do not operate with less than five quarts. Fill to eight quarts for extended flight."
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Engine Cooling Air Inlets",
+              "expectation": "CLEAR of obstructions"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Propeller and Spinner",
+              "expectation": "CHECK for nicks and security"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Air Filter",
+              "expectation": "CHECK"
+            },
+            {
+              "type": "ITEM_PLAINTEXT",
+              "prompt": "for restrictions by dust or other foreign matter",
+              "indent": 1
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Nose Wheel Strut and Tire",
+              "expectation": "CHECK"
+            },
+            {
+              "type": "ITEM_PLAINTEXT",
+              "prompt": "for proper inflation of strut and general condition of tire",
+              "indent": 1
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Left Static Source Opening",
+              "expectation": "CHECK for blockage"
+            },
+            {
+              "type": "ITEM_TITLE",
+              "prompt": "LEFT WING"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Fuel Quantity",
+              "expectation": "CHECK VISUALLY for desired level"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Fuel Filler Cap",
+              "expectation": "SECURE and VENT UNOBSTRUCTED"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Fuel Tank Sump Quick Drain Valves",
+              "expectation": "DRAIN a cupful"
+            },
+            {
+              "type": "ITEM_PLAINTEXT",
+              "prompt": "DRAIN at least a cupful of fuel (using sampler cup) from each sump location to check for water, sediment, and proper fuel grade before each flight and after each refueling. If water is observed, take further samples until clear and then gently rock wings and lower tail to the ground to move any additional contaminants to the sampling points. Take repeated samples from all fuel drain points until all contamination has been removed. If contaminants are still present, refer to WARNING below and do not fly airplane.",
+              "indent": 1
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Main Wheel Tire",
+              "expectation": "CHECK"
+            },
+            {
+              "type": "ITEM_PLAINTEXT",
+              "prompt": "for proper inflation and general condition",
+              "indent": 1
+            },
+            {
+              "type": "ITEM_TITLE",
+              "prompt": "LEFT WING Leading Edge"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Fuel Tank Vent Opening",
+              "expectation": "CHECK for blockage"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Stall Warning Opening",
+              "expectation": "CHECK for blockage"
+            },
+            {
+              "type": "ITEM_PLAINTEXT",
+              "prompt": "To check the system, place a clean handkerchief over the vent opening and apply suction; a sound from the warning horn will confirm system operation.",
+              "indent": 1
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Wing Tie-Down",
+              "expectation": "DISCONNECT"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Landing/Taxi Light(s)",
+              "expectation": "CHECK"
+            },
+            {
+              "type": "ITEM_PLAINTEXT",
+              "prompt": "for condition and cleanliness of cover",
+              "indent": 1
+            },
+            {
+              "type": "ITEM_TITLE",
+              "prompt": "LEFT WING Trailing Edge"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Aileron",
+              "expectation": "CHECK"
+            },
+            {
+              "type": "ITEM_PLAINTEXT",
+              "prompt": "Check freedom of movement and security",
+              "indent": 1
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Flap",
+              "expectation": "CHECK"
+            },
+            {
+              "type": "ITEM_PLAINTEXT",
+              "prompt": "Check for security and condition",
+              "indent": 1
+            }
+          ]
+        },
+        {
+          "title": "Before Starting Engine",
+          "items": [
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Preflight Inspection",
+              "expectation": "COMPLETE"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Passenger Briefing",
+              "expectation": "COMPLETE"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Seats and Seat Belts",
+              "expectation": "ADJUST and LOCK. Ensure inertia reel locking."
+            },
+            {
+              "type": "ITEM_PLAINTEXT",
+              "prompt": "Ensure inertia reel locking.",
+              "indent": 1
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Brakes",
+              "expectation": "TEST and SET"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Circuit Breakers",
+              "expectation": "CHECK IN"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Electrical Equipment",
+              "expectation": "OFF"
+            },
+            {
+              "type": "ITEM_CAUTION",
+              "prompt": "THE AVIONICS MASTER SWITCH MUST BE OFF DURING ENGINE START TO PREVENT POSSIBLE DAMAGE TO AVIONICS"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Avionics Master Switch",
+              "expectation": "OFF"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Fuel Selector Valve",
+              "expectation": "BOTH"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Fuel Shutoff Valve",
+              "expectation": "ON (push full in)"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Avionics Circuit Breakers",
+              "expectation": "CHECK IN"
+            }
+          ]
+        },
+        {
+          "title": "Starting Engine (With Battery)",
+          "items": [
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Throttle",
+              "expectation": "OPEN 1/4 INCH"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Mixture",
+              "expectation": "IDLE CUTOFF"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Propeller Area",
+              "expectation": "CLEAR"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Master Switch",
+              "expectation": "ON"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Flashing Beacon",
+              "expectation": "ON"
+            },
+            {
+              "type": "ITEM_NOTE",
+              "prompt": "If engine is warm, omit priming procedure."
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Auxiliary Fuel Pump Switch",
+              "expectation": "ON"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Mixture",
+              "expectation": "SET to FULL RICH (3-5 seconds)"
+            },
+            {
+              "type": "ITEM_PLAINTEXT",
+              "prompt": "until stable fuel flow is indicated (usually 3 to 5 seconds)",
+              "indent": 1
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Mixture",
+              "expectation": "IDLE CUTOFF"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Auxiliary Fuel Pump",
+              "expectation": "OFF"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Ignition Switch",
+              "expectation": "START"
+            },
+            {
+              "type": "ITEM_PLAINTEXT",
+              "prompt": "(release when engine starts)",
+              "indent": 1
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Mixture",
+              "expectation": "ADVANCE smoothly to RICH when engine starts"
+            },
+            {
+              "type": "ITEM_NOTE",
+              "prompt": "If engine floods, turn off auxiliary fuel pump, set mixture to idle cutoff, open throttle 1/2 to full, and motor (crank) engine. When engine starts, set mixture to full rich and close throttle promptly."
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Oil Pressure",
+              "expectation": "CHECK"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Navigation Lights",
+              "expectation": "ON as required"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Avionics Master Switch",
+              "expectation": "ON"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Radios",
+              "expectation": "ON"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Flaps",
+              "expectation": "RETRACT"
+            }
+          ]
+        },
+        {
+          "title": "Starting Engine (With External Power)",
+          "items": [
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Throttle",
+              "expectation": "OPEN 1/4 INCH"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Mixture",
+              "expectation": "IDLE CUTOFF"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Propeller Area",
+              "expectation": "CLEAR"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Master Switch",
+              "expectation": "OFF"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Extermal Power",
+              "expectation": "CONNECT to airplane receptacle"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Flashing Beacon",
+              "expectation": "ON"
+            },
+            {
+              "type": "ITEM_NOTE",
+              "prompt": "If engine is warm, omit priming procedure."
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Auxiliary Fuel Pump Switch",
+              "expectation": "ON"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Mixture",
+              "expectation": "SET to FULL RICH (3-5 seconds)"
+            },
+            {
+              "type": "ITEM_PLAINTEXT",
+              "prompt": "until stable fuel flow is indicated (usually 3 to 5 seconds)",
+              "indent": 1
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Mixture",
+              "expectation": "IDLE CUTOFF"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Auxiliary Fuel Pump",
+              "expectation": "OFF"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Ignition Switch",
+              "expectation": "START"
+            },
+            {
+              "type": "ITEM_PLAINTEXT",
+              "prompt": "(release when engine starts)",
+              "indent": 1
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Mixture",
+              "expectation": "ADVANCE smoothly to RICH when engine starts"
+            },
+            {
+              "type": "ITEM_NOTE",
+              "prompt": "If engine floods, turn off auxiliary fuel pump, set mixture to idle cutoff, open throttle 1/2 to full, and motor (crank) engine. When engine starts, set mixture to full rich and close throttle promptly."
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Oil Pressure",
+              "expectation": "CHECK"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "External Power",
+              "expectation": "DISCONNECT"
+            },
+            {
+              "type": "ITEM_PLAINTEXT",
+              "prompt": "from airplane receptacle.",
+              "indent": 1
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "External power door",
+              "expectation": "SECURE"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Electrical System",
+              "expectation": "CHECK"
+            },
+            {
+              "type": "ITEM_PLAINTEXT",
+              "prompt": "for proper operation.",
+              "indent": 1
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "a. Master Switch",
+              "expectation": "OFF",
+              "indent": 1
+            },
+            {
+              "type": "ITEM_PLAINTEXT",
+              "prompt": "(disconnects both the battery and alternator from the system)",
+              "indent": 2
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "b. Taxi and Landing Light Switches",
+              "expectation": "ON",
+              "indent": 1
+            },
+            {
+              "type": "ITEM_PLAINTEXT",
+              "prompt": "(to provide an initial electrical load on the system)",
+              "indent": 2
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "c. Engine RPM",
+              "expectation": "IDLE",
+              "indent": 1
+            },
+            {
+              "type": "ITEM_PLAINTEXT",
+              "prompt": "(Minimum alternator output occurs at idle)",
+              "indent": 2
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "d. Master Switch",
+              "expectation": "ON",
+              "indent": 1
+            },
+            {
+              "type": "ITEM_PLAINTEXT",
+              "prompt": "(with taxi and landing lights switched on. The ammeter should indicate in the negative direction, showing that the alternator output is below the load requirements, but the battery is supplying current ot the system)",
+              "indent": 2
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "e. Engine RPM",
+              "expectation": "INCREASE to ~1500 RPM",
+              "indent": 1
+            },
+            {
+              "type": "ITEM_PLAINTEXT",
+              "prompt": "(as engine RPM increases, alternator output should increase to meet the system load requirements)",
+              "indent": 2
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "f. Ammeter and Low Voltage Annunicator",
+              "expectation": "CHECK",
+              "indent": 1
+            },
+            {
+              "type": "ITEM_PLAINTEXT",
+              "prompt": "(the ammeter shoul dindicate in the positive direction, showing that the alternator is supplying current and the Low Voltage Annunicator (VOLTS) should not be lighted)",
+              "indent": 2
+            },
+            {
+              "type": "ITEM_NOTE",
+              "prompt": "If the indications, as noted in Step \"d\" and Step \"f\", are not observed, the electrical system is not functioning properly. Corrective maintenance must be performed to provide for proper electrical system operation before flight."
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Navigation Lights",
+              "expectation": "ON as required"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Avionics Master Switch",
+              "expectation": "ON"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Radios",
+              "expectation": "ON"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Flaps",
+              "expectation": "RETRACT"
+            }
+          ]
+        },
+        {
+          "title": "Before Takeoff",
+          "items": [
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Parking Brake",
+              "expectation": "SET"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Passenger Seat Backs",
+              "expectation": "MOST UPRIGHT POSITION"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Seats and Seat Belts",
+              "expectation": "CHECK SECURE"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Cabin Doors",
+              "expectation": "CLOSED and LOCKED"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Flight Controls",
+              "expectation": "FREE and CORRECT"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Flight Instruments",
+              "expectation": "CHECK and SET"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Fuel Quantity",
+              "expectation": "CHECK"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Mixture",
+              "expectation": "RICH"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Fuel Selector Valve",
+              "expectation": "RECHECK BOTH"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Throttle",
+              "expectation": "1800 RPM"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Magnetos",
+              "expectation": "CHECK (RPM drop should not exceed 150 RPM on either magneto or 50 RPM differential between magnetos)"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Vacuum Gage",
+              "expectation": "CHECK"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Engine Instruments and Ammeter",
+              "expectation": "CHECK"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Annunciator Panel",
+              "expectation": "Ensure no annunciators are illuminated"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Throttle",
+              "expectation": "CHECK IDLE"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Throttle",
+              "expectation": "1000 RPM or LESS"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Throttle Friction Lock",
+              "expectation": "ADJUST"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Strobe Lights",
+              "expectation": "AS DESIRED"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Radios and Avionics",
+              "expectation": "SET"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "NAV/GPS Switch (if installed)",
+              "expectation": "SET"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Autopilot (if installed)",
+              "expectation": "OFF"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Elevator Trim",
+              "expectation": "SET for takeoff"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Wing Flaps",
+              "expectation": "SET for takeoff (0°-10°)"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Brakes",
+              "expectation": "RELEASE"
+            }
+          ]
+        },
+        {
+          "title": "Normal Takeoff",
+          "items": [
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Wing Flaps",
+              "expectation": "0°-10°"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Throttle",
+              "expectation": "FULL OPEN"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Mixture",
+              "expectation": "RICH (above 3000 feet, LEAN to obtain maximum RPM)"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Elevator Control",
+              "expectation": "LIFT NOSE WHEEL (at 55 KIAS)"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Climb Speed",
+              "expectation": "70-80 KIAS"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Wing Flaps",
+              "expectation": "RETRACT"
+            }
+          ]
+        },
+        {
+          "title": "Short Field Takeoff",
+          "items": [
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Wing Flaps",
+              "expectation": "10°"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Brakes",
+              "expectation": "APPLY"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Throttle",
+              "expectation": "FULL OPEN"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Mixture",
+              "expectation": "RICH (above 3000 feet, LEAN to obtain maximum RPM)"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Brakes",
+              "expectation": "RELEASE"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Elevator Control",
+              "expectation": "SLIGHTLY TAIL LOW"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Climb Speed",
+              "expectation": "57 KIAS (until all obstacles are cleared)"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Wing Flaps",
+              "expectation": "RETRACT slowly after reaching 60 KIAS"
+            }
+          ]
+        },
+        {
+          "title": "Enroute Climb",
+          "items": [
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Airspeed",
+              "expectation": "70-85 KIAS"
+            },
+            {
+              "type": "ITEM_NOTE",
+              "prompt": "If a maximum performance climb is necessary, use speeds shown in the Rate Of Climb chart in Section 5.",
+              "indent": 1
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Throttle",
+              "expectation": "FULL OPEN"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Mixture",
+              "expectation": "RICH (above 3000 feet, LEAN to obtain maximum RPM)"
+            }
+          ]
+        },
+        {
+          "title": "Cruise",
+          "items": [
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Power",
+              "expectation": "2000-2400 RPM (No more than 80% is recommended)"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Elevator Trim",
+              "expectation": "ADJUST"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Mixture",
+              "expectation": "LEAN"
+            }
+          ]
+        },
+        {
+          "title": "Descent",
+          "items": [
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Power",
+              "expectation": "AS DESIRED"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Mixture",
+              "expectation": "ADJUST for smooth operation"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Altimeter",
+              "expectation": "SET"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "NAV/GPS Switch",
+              "expectation": "SET"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Fuel Selector Valve",
+              "expectation": "BOTH"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Wing Flaps",
+              "expectation": "AS DESIRED (0°-10° below 110 KIAS, 10°-30° below 85 KIAS)"
+            }
+          ]
+        },
+        {
+          "title": "Before Landing",
+          "items": [
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Pilot and Passenger Seat Backs",
+              "expectation": "MOST UPRIGHT POSITION"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Seats and Seat Belts",
+              "expectation": "SECURED and LOCKED"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Fuel Selector Valve",
+              "expectation": "BOTH"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Mixture",
+              "expectation": "RICH"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Landing/Taxi Lights",
+              "expectation": "ON"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Autopilot (if installed)",
+              "expectation": "OFF"
+            }
+          ]
+        },
+        {
+          "title": "Normal Landing",
+          "items": [
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Airspeed",
+              "expectation": "65-75 KIAS (flaps UP)"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Wing Flaps",
+              "expectation": "AS DESIRED (0°-10° below 110 KIAS, 10°-30° below 85 KIAS)"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Airspeed",
+              "expectation": "60-70 KIAS (flaps DOWN)"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Touchdown",
+              "expectation": "MAIN WHEELS FIRST"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Landing Roll",
+              "expectation": "LOWER NOSE WHEEL GENTLY"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Braking",
+              "expectation": "MINIMUM REQUIRED"
+            }
+          ]
+        },
+        {
+          "title": "Short Field Landing",
+          "items": [
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Airspeed",
+              "expectation": "65-75 KIAS (flaps UP)"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Wing Flaps",
+              "expectation": "FULL DOWN (30°)"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Airspeed",
+              "expectation": "62 KIAS (until flare)"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Power",
+              "expectation": "REDUCE to idle after clearing obstacle"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Touchdown",
+              "expectation": "MAIN WHEELS FIRST"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Brakes",
+              "expectation": "APPLY HEAVILY"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Wing Flaps",
+              "expectation": "RETRACT"
+            }
+          ]
+        },
+        {
+          "title": "Balked Landing",
+          "items": [
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Throttle",
+              "expectation": "FULL OPEN"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Wing Flaps",
+              "expectation": "RETRACT TO 20°"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Climb Speed",
+              "expectation": "55 KIAS"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Wing Flaps",
+              "expectation": "10° (until obstacles are cleared), RETRACT (after reaching a safe altitude and 60 KIAS)"
+            }
+          ]
+        },
+        {
+          "title": "After Landing",
+          "items": [
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Wing Flaps",
+              "expectation": "UP"
+            }
+          ]
+        },
+        {
+          "title": "Securing Airplane",
+          "items": [
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Parking Brake",
+              "expectation": "SET"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Electrical Equipment, Autopilot (if installed)",
+              "expectation": "OFF"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Avionics Master Switch",
+              "expectation": "OFF"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Mixture",
+              "expectation": "IDLE CUT OFF (pulled full out)"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Ignition Switch",
+              "expectation": "OFF"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Master Switch",
+              "expectation": "OFF"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Control Lock",
+              "expectation": "INSTALL"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Fuel Selector Valve",
+              "expectation": "LEFT or RIGHT to prevent cross feeding"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Emergency Procedures",
+      "category": "emergency",
+      "checklists": [
+        {
+          "title": "Engine Failure During Takeoff Roll",
+          "items": [
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Throttle",
+              "expectation": "IDLE"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Brakes",
+              "expectation": "APPLY"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Wing Flaps",
+              "expectation": "RETRACT"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Mixture",
+              "expectation": "IDLE CUT OFF"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Ignition Switch",
+              "expectation": "OFF"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Master Switch",
+              "expectation": "OFF"
+            }
+          ]
+        },
+        {
+          "title": "Engine Failure Immediately After Takeoff",
+          "items": [
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Airspeed",
+              "expectation": "65 KIAS (flaps UP), 60 KIAS (flaps DOWN)"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Mixture",
+              "expectation": "IDLE CUT OFF"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Fuel Shutoff Valve",
+              "expectation": "OFF (Pull Full Out)"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Ignition Switch",
+              "expectation": "OFF"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Wing Flaps",
+              "expectation": "AS REQUIRED"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Master Switch",
+              "expectation": "OFF"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Cabin Door",
+              "expectation": "UNLATCH"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Land",
+              "expectation": "STRAIGHT AHEAD"
+            }
+          ]
+        },
+        {
+          "title": "Engine Failure During Flight (Restart Procedures)",
+          "items": [
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Airspeed",
+              "expectation": "65 KIAS"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Fuel Shutoff Valve",
+              "expectation": "ON (push full in)"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Fuel Selector Valve",
+              "expectation": "BOTH"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Auxiliary Fuel Pump Switch",
+              "expectation": "ON"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Mixture",
+              "expectation": "RICH (if restart has not occurred)"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Ignition Switch",
+              "expectation": "BOTH (or START if propeller is stopped)"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Auxiliary Fuel Pump Switch",
+              "expectation": "OFF"
+            }
+          ]
+        },
+        {
+          "title": "Emergency Landing Without Engine Power",
+          "items": [
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Passenger Seat Backs",
+              "expectation": "MOST UPRIGHT POSITION"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Seats and Seat Belts",
+              "expectation": "SECURE"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Airspeed",
+              "expectation": "65 KIAS (flaps UP), 60 KIAS (flaps DOWN)"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Mixture",
+              "expectation": "IDLE CUT OFF"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Fuel Shutoff Valve",
+              "expectation": "OFF (Pull Full Out)"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Ignition Switch",
+              "expectation": "OFF"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Wing Flaps",
+              "expectation": "AS REQUIRED (30° recommended)"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Master Switch",
+              "expectation": "OFF (when landing is assured)"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Doors",
+              "expectation": "UNLATCH PRIOR TO TOUCHDOWN"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Touchdown",
+              "expectation": "SLIGHTLY TAIL LOW"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Brakes",
+              "expectation": "APPLY HEAVILY"
+            }
+          ]
+        },
+        {
+          "title": "Precautionary Landing With Engine Power",
+          "items": [
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Passenger Seat Backs",
+              "expectation": "MOST UPRIGHT POSITION"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Seats and Seat Belts",
+              "expectation": "SECURE"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Airspeed",
+              "expectation": "60 KIAS"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Wing Flaps",
+              "expectation": "20°"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Selected Field",
+              "expectation": "FLY OVER, noting terrain and obstructions, then retract flaps upon reaching a safe altitude and airspeed"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Avionics Master Switch and Electrical Switches",
+              "expectation": "OFF"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Wing Flaps",
+              "expectation": "30° (on final approach)"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Airspeed",
+              "expectation": "60 KIAS"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Master Switch",
+              "expectation": "OFF"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Doors",
+              "expectation": "UNLATCH PRIOR TO TOUCHDOWN"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Touchdown",
+              "expectation": "SLIGHTLY TAIL LOW"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Ignition Switch",
+              "expectation": "OFF"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Mixture",
+              "expectation": "IDLE CUTOFF"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Brakes",
+              "expectation": "APPLY HEAVILY"
+            }
+          ]
+        },
+        {
+          "title": "Ditching",
+          "items": [
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Radio",
+              "expectation": "TRANSMIT MAYDAY on 121.5 MHz, giving location and intentions and SQUAWK 7700"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Heavy Objects (in baggage area)",
+              "expectation": "SECURE OR JETTISON (if possible)"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Passenger Seat Backs",
+              "expectation": "MOST UPRIGHT POSITION"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Seats and Seat Belts",
+              "expectation": "SECURE"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Wing Flaps",
+              "expectation": "20° to 30°"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Power",
+              "expectation": "ESTABLISH 300 FT/MIN DESCENT AT 55 KIAS"
+            },
+            {
+              "type": "ITEM_NOTE",
+              "prompt": "If no power is available, approach at 65 KIAS with flaps up or at 60 KIAS with 10° flaps.",
+              "indent": 1
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Approach",
+              "expectation": "High Winds, Heavy Seas -- INTO THE WIND. Light Winds, Heavy Swells -- PARALLEL TO SWELLS."
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Cabin Doors",
+              "expectation": "UNLATCH"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Touchdown",
+              "expectation": "LEVEL ATTITUDE AT ESTABLISHED RATE OF DESCENT"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Face",
+              "expectation": "CUSHION at touchdown with folded coat"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "ELT",
+              "expectation": "Activate"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Airplane",
+              "expectation": "EVACUATE through cabin doors. If necessary, open window and flood cabin to equalize pressure so doors can be opened."
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Life Vests and Raft",
+              "expectation": "INFLATE WHEN CLEAR OF AIRPLANE"
+            }
+          ]
+        },
+        {
+          "title": "Fires",
+          "items": [
+            {
+              "type": "ITEM_TITLE",
+              "prompt": "During Start On Ground"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Ignition Switch",
+              "expectation": "START, Continue Cranking"
+            },
+            {
+              "type": "ITEM_PLAINTEXT",
+              "prompt": "If engine starts:",
+              "indent": 1
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Power",
+              "expectation": "1700 RPM for a few minutes"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Engine",
+              "expectation": "SHUTDOWN and inspect for damage"
+            },
+            {
+              "type": "ITEM_PLAINTEXT",
+              "prompt": "If engine fails to start:",
+              "indent": 1
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Throttle",
+              "expectation": "FULL OPEN"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Mixture",
+              "expectation": "IDLE CUT OFF"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Cranking",
+              "expectation": "CONTINUE"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Fuel Shutoff Valve",
+              "expectation": "OFF (Pull Full Out)"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Auxiliary Fuel Pump",
+              "expectation": "OFF"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Fire Extinguisher",
+              "expectation": "OBTAIN"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Engine",
+              "expectation": "SECURE. Master Switch -- OFF. Ignition Switch -- OFF"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Parking Brake",
+              "expectation": "RELEASE"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Airplane",
+              "expectation": "EVACUATE"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Fire",
+              "expectation": "EXTINGUISH"
+            },
+            {
+              "type": "ITEM_CHALLENGE_RESPONSE",
+              "prompt": "Fire Damage",
+              "expectation": "INSPECT"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
