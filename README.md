@@ -12,7 +12,7 @@ it reduces number of times I have to look down and away from where my eyes
 should be. I still carry a paper checklist for redundancy, but I've switched
 over to electronic checklists for primary use.
 
-This project is mainly intended to be a template for you to maintain one's
+This project is mainly intended to be a template for you to maintain your
 checklists, in an editable and shareable form. Storing checklists in plain text
 and in open source form should foster wider usage of electronic checklists
 and the use of checklists overall with less missed steps. That should in turn
