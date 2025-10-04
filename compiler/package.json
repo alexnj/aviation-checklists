@@ -1,7 +1,7 @@
 {
-  "name": "efis-converter",
+  "name": "efis-compiler",
   "version": "1.0.0",
-  "description": "Converts checklist source files to different EFIS formats",
+  "description": "Converts checklist source files to different EFIS/EFB formats",
   "main": "convert.js",
   "scripts": {
     "build": "tsc *.ts --module commonjs --esModuleInterop --target es2022 --lib es2022,dom --skipLibCheck",
