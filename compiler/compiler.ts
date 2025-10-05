@@ -6,7 +6,13 @@ import {
   FORMAT_REGISTRY,
   serializeChecklistFile,
 } from '../efis-editor/src/model/formats/format-registry';
-import { generatePdf } from './compile-pdf';
+import { PdfFormat } from './pdf-format';
+
+FORMAT_REGISTRY.register(PdfFormat, FormatId.PDF4, 'Printable 4-column PDF', {
+  supportsImport: false,
+  extension: '.pdf',
+});
+
 const RELEASE_URL_PREFIX = '../../releases/download/latest/';
 
 // Polyfill for window.crypto and window.crypto.subtle for Node.js
@@ -84,21 +90,12 @@ async function convertFile(
     const checklistFile = await jsonFormat.toProto(inputFileObject);
     const links: Record<string, string> = {};
 
-    const checklistJson = JSON.parse(inputContent);
-    const pdfOutputFileName = parsedInputPath.name + '.pdf';
-    const pdfOutputFile = path.join(outputDir, pdfOutputFileName);
-    await generatePdf(checklistJson, pdfOutputFile);
-    console.log(`Saving PDF as ${pdfOutputFile}`);
-    const pdfDownloadUrl =
-      RELEASE_URL_PREFIX + pdfOutputFile.split('/').slice(2).join('.');
-    links['pdf'] = `[pdf](${pdfDownloadUrl})`;
-
     for (const {
       id,
       name,
       extension,
     } of FORMAT_REGISTRY.getSupportedOutputFormats()) {
-      if (['pdf', 'json'].includes(id)) {
+      if (['json', 'pdf'].includes(id)) {
         console.log(`Skipping ${id} format.`);
         continue;
       }
@@ -150,15 +147,10 @@ async function main() {
     .filter(({ id }) => !['json'].includes(id))
     .sort((a, b) => a.name.localeCompare(b.name));
 
-  const allOutputFormats = [
-    { id: 'pdf', name: 'PDF' },
-    ...outputFormats.filter(({ id }) => id !== 'pdf'),
-  ];
-
   const header =
-    '| Checklist | ' + allOutputFormats.map((f) => f.name).join(' | ') + ' |';
+    '| Checklist | ' + outputFormats.map((f) => f.name).join(' | ') + ' |';
   const separator =
-    '| --- | ' + allOutputFormats.map(() => '---').join(' | ') + ' |';
+    '| --- | ' + outputFormats.map(() => '---').join(' | ') + ' |';
   const tableRows = [header, separator];
 
   const jsonFiles = findJsonFiles(checklistsDir);
@@ -172,7 +164,7 @@ async function main() {
     const links = await convertFile(inputFile, outputDir);
     const checklistName = path.basename(inputFile);
     const rowCells = [checklistName];
-    for (const format of allOutputFormats) {
+    for (const format of outputFormats) {
       rowCells.push(links[format.id] || ' ');
     }
     tableRows.push(`| ${rowCells.join(' | ')} |`);
