@@ -45,17 +45,7 @@ jobs:
         run: npx tsc ../compiler/*.ts --module commonjs --esModuleInterop --target es2022 --lib es2022,dom --skipLibCheck
 
       - name: Convert Checklist JSONs to EFIS
-        run: |
-          mkdir -p output
-          find checklists -type f -name "*.json" | while read -r file; do
-            echo "Found checklist $file."
-            if [ -f "$file" ]; then
-              filename=$(basename "$file" .json)
-              dirname=$(dirname "$file")
-              mkdir -p "output/$dirname"
-              node compiler/compiler.js "$file" "output/$dirname"
-            fi
-          done
+        run: node compiler/compiler.js
 
       - name: Setup gh actions artifact client
         uses: lhotari/gh-actions-artifact-client@v2
