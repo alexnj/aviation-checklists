@@ -1,4 +1,4 @@
 node_modules
-converters/*.js
+compiler/*.js
 output/*
 efis-editor

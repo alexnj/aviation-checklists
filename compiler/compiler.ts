@@ -69,16 +69,9 @@ if (typeof global.window === 'undefined') {
 }
 // End polyfill
 
-const inputFile = process.argv[2];
-const outputDir = process.argv[3];
-
-if (!inputFile || !outputDir) {
-  console.error('Usage: node convert.js <input.json> <output-dir>');
-  process.exit(1);
-}
-
-async function main() {
+async function convertFile(inputFile: string, outputDir: string) {
   try {
+    console.log(`Converting ${inputFile}`);
     const parsedInputPath = path.parse(inputFile);
     const inputContent = fs.readFileSync(inputFile, 'utf-8');
     const inputFileObject = new File([inputContent], parsedInputPath.base);
@@ -110,8 +103,40 @@ async function main() {
       cols.push(`[${id}](${outputFile}) |`);
     }
   } catch (error) {
-    console.error('An error occurred during conversion:', error);
-    process.exit(1);
+    console.error(
+      `An error occurred during conversion of ${inputFile}:`,
+      error
+    );
+  }
+}
+
+function findJsonFiles(dir: string, fileList: string[] = []): string[] {
+  const files = fs.readdirSync(dir);
+  files.forEach((file) => {
+    const filePath = path.join(dir, file);
+    const fileStat = fs.lstatSync(filePath);
+    if (fileStat.isDirectory()) {
+      findJsonFiles(filePath, fileList);
+    } else if (path.extname(file) === '.json') {
+      fileList.push(filePath);
+    }
+  });
+  return fileList;
+}
+
+async function main() {
+  const checklistsDir = 'checklists';
+  const outputRootDir = 'output';
+
+  const jsonFiles = findJsonFiles(checklistsDir);
+  for (const inputFile of jsonFiles) {
+    const dirname = path.dirname(inputFile);
+    const outputDir = path.join(outputRootDir, dirname);
+
+    if (!fs.existsSync(outputDir)) {
+      fs.mkdirSync(outputDir, { recursive: true });
+    }
+    await convertFile(inputFile, outputDir);
   }
 }
 
