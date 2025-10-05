@@ -82,7 +82,7 @@ export class PdfFormat extends AbstractChecklistFormat {
       doc
         .fontSize(10)
         .font('Helvetica')
-        .text(checklist.metadata?.name || '', headerX, doc.y, {
+        .text(checklist.metadata?.aircraftInfo || '', headerX, doc.y, {
           width: headerWidth,
           align: 'center',
         });
@@ -182,7 +182,7 @@ export class PdfFormat extends AbstractChecklistFormat {
             let itemHeight = 0;
 
             // Estimate height
-            doc.fontSize(8);
+            doc.fontSize(9);
             switch (item.type) {
               case ChecklistItem_Type.ITEM_TITLE:
                 doc.font('Helvetica-Bold');
@@ -202,7 +202,7 @@ export class PdfFormat extends AbstractChecklistFormat {
                 const challengeHeight = doc.heightOfString(item.prompt, {
                   width: challengeWidth,
                 });
-                doc.font('Helvetica'); // Not bold
+                doc.font('Helvetica');
                 const responseHeight = doc.heightOfString(item.expectation, {
                   width: responseWidth,
                 });
