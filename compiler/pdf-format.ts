@@ -43,10 +43,12 @@ export class PdfFormat extends AbstractChecklistFormat {
       // Column layout
       const numColumns = 4;
       const gutterWidth = 10;
+      const centerGutterWidth = 2 * gutterWidth;
       const pageContentWidth =
         doc.page.width - doc.page.margins.left - doc.page.margins.right;
-      const columnWidth =
-        (pageContentWidth - gutterWidth * (numColumns - 1)) / numColumns;
+      // Total gutter width is 2 normal gutters and one double-width center gutter
+      const totalGutterWidth = 2 * gutterWidth + centerGutterWidth;
+      const columnWidth = (pageContentWidth - totalGutterWidth) / numColumns;
 
       let currentColumn = 0;
       const startY = doc.y;
@@ -54,8 +56,19 @@ export class PdfFormat extends AbstractChecklistFormat {
       const pageBottom = doc.page.height - doc.page.margins.bottom;
       let pageNumber = 1;
 
-      const getColumnX = (col: number) =>
-        doc.page.margins.left + col * (columnWidth + gutterWidth);
+      const getColumnX = (col: number) => {
+        let x = doc.page.margins.left;
+        for (let i = 0; i < col; i++) {
+          x += columnWidth;
+          // Gutter after column 2 (index 1) is wider.
+          if (i === 1) {
+            x += centerGutterWidth;
+          } else {
+            x += gutterWidth;
+          }
+        }
+        return x;
+      };
 
       const moveToNextColumn = () => {
         currentColumn++;
