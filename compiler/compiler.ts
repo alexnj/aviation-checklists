@@ -140,8 +140,7 @@ async function main() {
     .filter(({ id }) => !['pdf', 'json'].includes(id))
     .sort((a, b) => a.name.localeCompare(b.name));
   const header =
-    '| Checklist | ' + outputFormats.map((f) => f.name).join(' | ') + 1;
-  (' |');
+    '| Checklist | ' + outputFormats.map((f) => f.name).join(' | ') + ' |';
   const separator =
     '| --- | ' + outputFormats.map(() => '---').join(' | ') + ' |';
   const tableRows = [header, separator];
