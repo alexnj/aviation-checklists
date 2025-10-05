@@ -5,6 +5,11 @@ import {
 } from '../efis-editor/gen/ts/checklist';
 import { AbstractChecklistFormat } from '../efis-editor/src/model/formats/abstract-format';
 
+const RENDER_GROUP_HEADING = false;
+const COLOR_BLUE = '#0000FF';
+const COLOR_RED = '#FF0000';
+const COLOR_AMBER = '#CF3400';
+
 export class PdfFormat extends AbstractChecklistFormat {
   async toProto(file: File): Promise<ChecklistFile> {
     throw new Error('PDF to Proto conversion is not supported.');
@@ -55,26 +60,42 @@ export class PdfFormat extends AbstractChecklistFormat {
 
       // Header
       const headerWidth = columnWidth * 2 + gutterWidth;
+      const headerX = getColumnX(0);
+      let headerY = doc.page.margins.top;
+
       doc
+        .moveTo(headerX, headerY)
+        .lineTo(headerX + headerWidth, headerY)
+        .lineWidth(0.5)
+        .strokeColor(COLOR_BLUE)
+        .stroke();
+      headerY += 5;
+
+      doc
+        .fillColor(COLOR_BLUE)
         .fontSize(14)
         .font('Helvetica-Bold')
-        .text(
-          checklist.metadata?.makeAndModel || '',
-          getColumnX(0),
-          doc.page.margins.top,
-          {
-            width: headerWidth,
-            align: 'center',
-          }
-        );
-      doc
-        .fontSize(10)
-        .font('Helvetica')
-        .text(checklist.metadata?.name || '', getColumnX(0), doc.y, {
+        .text(checklist.metadata?.makeAndModel || '', headerX, headerY, {
           width: headerWidth,
           align: 'center',
         });
-      doc.moveDown(2);
+      doc
+        .fontSize(10)
+        .font('Helvetica')
+        .text(checklist.metadata?.name || '', headerX, doc.y, {
+          width: headerWidth,
+          align: 'center',
+        });
+      doc.fillColor('black');
+
+      headerY = doc.y + 5;
+      doc
+        .moveTo(headerX, headerY)
+        .lineTo(headerX + headerWidth, headerY)
+        .lineWidth(0.5)
+        .strokeColor(COLOR_BLUE)
+        .stroke();
+      doc.y = headerY + 10;
 
       let currentColumn = 0;
       const startY = doc.y;
@@ -105,18 +126,35 @@ export class PdfFormat extends AbstractChecklistFormat {
       };
 
       for (const group of checklist.groups) {
-        const groupTitle = group.title.toUpperCase();
-        doc.font('Helvetica-Bold').fontSize(10);
-        const groupTitleHeight = doc.heightOfString(groupTitle, {
-          width: columnWidth,
-          underline: true,
-        });
-        checkSpace(groupTitleHeight + 5);
-        doc.text(groupTitle, getColumnX(currentColumn), y, {
-          width: columnWidth,
-          underline: true,
-        });
-        y += groupTitleHeight + 5;
+        let groupCategoryColor = COLOR_BLUE;
+        switch (group.category) {
+          case 2:
+            // abnormal
+            groupCategoryColor = COLOR_AMBER;
+            break;
+          case 3:
+            // emergency
+            groupCategoryColor = COLOR_RED;
+            break;
+        }
+
+        if (RENDER_GROUP_HEADING) {
+          const groupTitle = group.title.toUpperCase();
+          doc.font('Helvetica-Bold').fontSize(10);
+          const groupTitleHeight = doc.heightOfString(groupTitle, {
+            width: columnWidth,
+            underline: true,
+          });
+          checkSpace(groupTitleHeight + 5);
+          doc
+            .fillColor(groupCategoryColor)
+            .text(groupTitle, getColumnX(currentColumn), y, {
+              width: columnWidth,
+              underline: true,
+            });
+          doc.fillColor('black');
+          y += groupTitleHeight + 5;
+        }
 
         for (const checklistInGroup of group.checklists) {
           if (checklistInGroup.title) {
@@ -127,10 +165,13 @@ export class PdfFormat extends AbstractChecklistFormat {
               align: 'center',
             });
             checkSpace(checklistTitleHeight + 5);
-            doc.text(checklistTitle, getColumnX(currentColumn), y, {
-              width: columnWidth,
-              align: 'center',
-            });
+            doc
+              .fillColor(groupCategoryColor)
+              .text(checklistTitle, getColumnX(currentColumn), y, {
+                width: columnWidth,
+                align: 'center',
+              });
+            doc.fillColor('black');
             y += checklistTitleHeight + 5;
           }
 
@@ -145,14 +186,19 @@ export class PdfFormat extends AbstractChecklistFormat {
             switch (item.type) {
               case ChecklistItem_Type.ITEM_TITLE:
                 doc.font('Helvetica-Bold');
-                itemHeight = doc.heightOfString(item.prompt, {
-                  width: itemWidth,
-                });
+                itemHeight =
+                  doc.heightOfString(item.prompt, {
+                    width: itemWidth,
+                  }) + 3;
                 break;
               case ChecklistItem_Type.ITEM_CHALLENGE_RESPONSE:
-                const challengeWidth = itemWidth * 0.7;
-                const responseWidth = itemWidth * 0.3;
                 doc.font('Helvetica');
+                let responseWidth = doc.widthOfString(item.expectation) + 4;
+                let challengeWidth = itemWidth - responseWidth;
+                if (challengeWidth < itemWidth * 0.3) {
+                  challengeWidth = itemWidth * 0.3;
+                  responseWidth = itemWidth - challengeWidth;
+                }
                 const challengeHeight = doc.heightOfString(item.prompt, {
                   width: challengeWidth,
                 });
@@ -194,12 +240,18 @@ export class PdfFormat extends AbstractChecklistFormat {
               case ChecklistItem_Type.ITEM_TITLE:
                 doc
                   .font('Helvetica-Bold')
-                  .text(item.prompt, itemX, y, { width: itemWidth });
-                y += itemHeight + 2;
+                  .text(item.prompt, itemX, y + 3, { width: itemWidth });
+                doc.fillColor('black');
+                y += itemHeight + 3;
                 break;
               case ChecklistItem_Type.ITEM_CHALLENGE_RESPONSE:
-                const challengeWidth = itemWidth * 0.7;
-                const responseWidth = itemWidth * 0.3;
+                doc.font('Helvetica');
+                let responseWidth = doc.widthOfString(item.expectation) + 4;
+                let challengeWidth = itemWidth - responseWidth;
+                if (challengeWidth < itemWidth * 0.3) {
+                  challengeWidth = itemWidth * 0.3;
+                  responseWidth = itemWidth - challengeWidth;
+                }
                 const responseX = itemX + challengeWidth;
 
                 doc
