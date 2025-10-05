@@ -20,12 +20,18 @@ improve safety. Or, that's the goal and intention of this project.
 
 ## Using
 
+<a href="https://github.com/alexnj/aviation-checklists/releases/latest">
+<img align="right" width="500" height="380" alt="image" src="https://github.com/user-attachments/assets/1a340be4-5c9e-4768-92cc-daa18aacfa57" />
+</a>
+
 > [!IMPORTANT]
 > Read the Disclaimer section below carefully before proceeding.
-
+  
 All the checklists are in the `checklists/` directory in readable plain text (JSON) form.
 Each commit builds them into a few EFIS compatible formats using [efis-editor](https://github.com/rdamazio/efis-editor) project.
 Compiled EFIS artifacts can be found on the [Releases](https://github.com/alexnj/aviation-checklists/releases/latest) page.
+
+The project now renders kneeboard-compatible foldable 4-column PDF rendering of each checklist, like in the screenshot on the right.
 
 For modifying or authoring new checklists, I highly recommend [EFIS editor](https://rdamazio.github.io/efis-editor/).
 It can load the JSON checklists and you can export them into any of the supported formats, or as JSON again to commit back to the repo.
