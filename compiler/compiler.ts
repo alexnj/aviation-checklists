@@ -69,7 +69,10 @@ if (typeof global.window === 'undefined') {
 }
 // End polyfill
 
-async function convertFile(inputFile: string, outputDir: string) {
+async function convertFile(
+  inputFile: string,
+  outputDir: string
+): Promise<Record<string, string>> {
   try {
     console.log(`Converting ${inputFile}`);
     const parsedInputPath = path.parse(inputFile);
@@ -77,7 +80,7 @@ async function convertFile(inputFile: string, outputDir: string) {
     const inputFileObject = new File([inputContent], parsedInputPath.base);
     const jsonFormat = new JsonFormat(FormatId.JSON, 'Raw data');
     const checklistFile = await jsonFormat.toProto(inputFileObject);
-    const cols = ['|'];
+    const links: Record<string, string> = {};
 
     for (const {
       id,
@@ -100,13 +103,15 @@ async function convertFile(inputFile: string, outputDir: string) {
         outputFile,
         Buffer.from(await writtenFile.arrayBuffer())
       );
-      cols.push(`[${id}](${outputFile}) |`);
+      links[id] = `[${id}](${outputFile})`;
     }
+    return links;
   } catch (error) {
     console.error(
       `An error occurred during conversion of ${inputFile}:`,
       error
     );
+    return {};
   }
 }
 
@@ -127,6 +132,18 @@ function findJsonFiles(dir: string, fileList: string[] = []): string[] {
 async function main() {
   const checklistsDir = 'checklists';
   const outputRootDir = 'output';
+  const outputMdFile = 'output.md';
+
+  const outputFormats = FORMAT_REGISTRY.getSupportedOutputFormats().filter(
+    ({ id }) => !['pdf', 'json'].includes(id)
+  );
+  const header =
+    '| Checklist | ' +
+    outputFormats.map((f) => f.name).join(' | ') +
+    ' |';
+  const separator =
+    '| --- | ' + outputFormats.map(() => '---').join(' | ') + ' |';
+  const tableRows = [header, separator];
 
   const jsonFiles = findJsonFiles(checklistsDir);
   for (const inputFile of jsonFiles) {
@@ -136,8 +153,17 @@ async function main() {
     if (!fs.existsSync(outputDir)) {
       fs.mkdirSync(outputDir, { recursive: true });
     }
-    await convertFile(inputFile, outputDir);
+    const links = await convertFile(inputFile, outputDir);
+    const checklistName = path.basename(inputFile);
+    const rowCells = [checklistName];
+    for (const format of outputFormats) {
+      rowCells.push(links[format.id] || ' ');
+    }
+    tableRows.push(`| ${rowCells.join(' | ')} |`);
   }
+
+  fs.writeFileSync(outputMdFile, tableRows.join('\n'));
+  console.log(`Generated ${outputMdFile}`);
 }
 
 main();
