@@ -9,6 +9,7 @@ const RENDER_GROUP_HEADING = false;
 const COLOR_BLUE = '#0000FF';
 const COLOR_RED = '#FF0000';
 const COLOR_AMBER = '#CF3400';
+const FONT_SIZE = 9;
 
 export class PdfFormat extends AbstractChecklistFormat {
   async toProto(file: File): Promise<ChecklistFile> {
@@ -125,6 +126,95 @@ export class PdfFormat extends AbstractChecklistFormat {
         }
       };
 
+      const calculateItemHeight = (
+        item: any,
+        doc: PDFKit.PDFDocument,
+        itemWidth: number
+      ): number => {
+        let itemHeight = 0;
+        doc.fontSize(FONT_SIZE);
+        switch (item.type) {
+          case ChecklistItem_Type.ITEM_TITLE:
+            doc.font('Helvetica-Bold');
+            itemHeight =
+              doc.heightOfString(item.prompt, {
+                width: itemWidth,
+              }) + 3;
+            break;
+          case ChecklistItem_Type.ITEM_CHALLENGE_RESPONSE:
+            doc.font('Helvetica');
+            let responseWidth = doc.widthOfString(item.expectation) + 4;
+            let challengeWidth = itemWidth - responseWidth;
+            if (challengeWidth < itemWidth * 0.3) {
+              challengeWidth = itemWidth * 0.3;
+              responseWidth = itemWidth - challengeWidth;
+            }
+            const challengeHeight = doc.heightOfString(item.prompt, {
+              width: challengeWidth,
+            });
+            doc.font('Helvetica');
+            const responseHeight = doc.heightOfString(item.expectation, {
+              width: responseWidth,
+            });
+            itemHeight = Math.max(challengeHeight, responseHeight);
+            break;
+          case ChecklistItem_Type.ITEM_PLAINTEXT:
+            doc.font('Helvetica');
+            itemHeight = doc.heightOfString(item.prompt, {
+              width: itemWidth,
+            });
+            break;
+          case ChecklistItem_Type.ITEM_WARNING:
+            doc.font('Helvetica-Oblique');
+            itemHeight = doc.heightOfString(`WARNING: ${item.prompt}`, {
+              width: itemWidth,
+            });
+            break;
+          case ChecklistItem_Type.ITEM_NOTE:
+            doc.font('Helvetica-Oblique');
+            itemHeight = doc.heightOfString(`NOTE: ${item.prompt}`, {
+              width: itemWidth,
+            });
+            break;
+          case ChecklistItem_Type.ITEM_SPACE:
+            itemHeight = 4;
+            break;
+        }
+        return itemHeight;
+      };
+
+      const calculateChecklistHeight = (
+        checklistInGroup: any,
+        doc: PDFKit.PDFDocument,
+        columnWidth: number
+      ): number => {
+        let totalHeight = 0;
+        if (checklistInGroup.title) {
+          const checklistTitle = checklistInGroup.title.toUpperCase();
+          doc.font('Helvetica-Bold').fontSize(FONT_SIZE);
+          totalHeight +=
+            doc.heightOfString(checklistTitle, {
+              width: columnWidth,
+              align: 'center',
+            }) + 5;
+        }
+
+        for (const item of checklistInGroup.items) {
+          const indent = (item.indent || 0) * 10;
+          const itemWidth = columnWidth - indent;
+          const itemHeight = calculateItemHeight(item, doc, itemWidth);
+          if (item.type === ChecklistItem_Type.ITEM_SPACE) {
+            totalHeight += 4;
+          } else if (item.type === ChecklistItem_Type.ITEM_TITLE) {
+            totalHeight += itemHeight + 3;
+          } else {
+            totalHeight += itemHeight + 2;
+          }
+        }
+        totalHeight += 8; // space after checklist
+        return totalHeight;
+      };
+
       for (const group of checklist.groups) {
         let groupCategoryColor = COLOR_BLUE;
         switch (group.category) {
@@ -157,9 +247,25 @@ export class PdfFormat extends AbstractChecklistFormat {
         }
 
         for (const checklistInGroup of group.checklists) {
+          const checklistHeight = calculateChecklistHeight(
+            checklistInGroup,
+            doc,
+            columnWidth
+          );
+          const remainingHeight = pageBottom - y;
+
+          if (
+            /* if current column has less than 30% height remaining, and
+               remaining checklist is < 50% */
+            remainingHeight < pageBottom * 0.3 &&
+            remainingHeight < checklistHeight * 0.5
+          ) {
+            moveToNextColumn();
+          }
+
           if (checklistInGroup.title) {
             const checklistTitle = checklistInGroup.title.toUpperCase();
-            doc.font('Helvetica-Bold').fontSize(9);
+            doc.font('Helvetica-Bold').fontSize(FONT_SIZE);
             const checklistTitleHeight = doc.heightOfString(checklistTitle, {
               width: columnWidth,
               align: 'center',
@@ -175,67 +281,23 @@ export class PdfFormat extends AbstractChecklistFormat {
             y += checklistTitleHeight + 5;
           }
 
-          for (const item of checklistInGroup.items) {
+          for (let i = 0; i < checklistInGroup.items.length; i++) {
+            const item = checklistInGroup.items[i];
+            const nextItem =
+              i + 1 < checklistInGroup.items.length
+                ? checklistInGroup.items[i + 1]
+                : null;
+
             const indent = (item.indent || 0) * 10;
             const itemWidth = columnWidth - indent;
 
-            let itemHeight = 0;
-
-            // Estimate height
-            doc.fontSize(9);
-            switch (item.type) {
-              case ChecklistItem_Type.ITEM_TITLE:
-                doc.font('Helvetica-Bold');
-                itemHeight =
-                  doc.heightOfString(item.prompt, {
-                    width: itemWidth,
-                  }) + 3;
-                break;
-              case ChecklistItem_Type.ITEM_CHALLENGE_RESPONSE:
-                doc.font('Helvetica');
-                let responseWidth = doc.widthOfString(item.expectation) + 4;
-                let challengeWidth = itemWidth - responseWidth;
-                if (challengeWidth < itemWidth * 0.3) {
-                  challengeWidth = itemWidth * 0.3;
-                  responseWidth = itemWidth - challengeWidth;
-                }
-                const challengeHeight = doc.heightOfString(item.prompt, {
-                  width: challengeWidth,
-                });
-                doc.font('Helvetica');
-                const responseHeight = doc.heightOfString(item.expectation, {
-                  width: responseWidth,
-                });
-                itemHeight = Math.max(challengeHeight, responseHeight);
-                break;
-              case ChecklistItem_Type.ITEM_PLAINTEXT:
-                doc.font('Helvetica');
-                itemHeight = doc.heightOfString(item.prompt, {
-                  width: itemWidth,
-                });
-                break;
-              case ChecklistItem_Type.ITEM_WARNING:
-                doc.font('Helvetica-Oblique');
-                itemHeight = doc.heightOfString(`WARNING: ${item.prompt}`, {
-                  width: itemWidth,
-                });
-                break;
-              case ChecklistItem_Type.ITEM_NOTE:
-                doc.font('Helvetica-Oblique');
-                itemHeight = doc.heightOfString(`NOTE: ${item.prompt}`, {
-                  width: itemWidth,
-                });
-                break;
-              case ChecklistItem_Type.ITEM_SPACE:
-                itemHeight = 4;
-                break;
-            }
+            let itemHeight = calculateItemHeight(item, doc, itemWidth);
 
             checkSpace(itemHeight);
             const itemX = getColumnX(currentColumn) + indent;
 
             // Render item
-            doc.fontSize(8);
+            doc.fontSize(FONT_SIZE);
             switch (item.type) {
               case ChecklistItem_Type.ITEM_TITLE:
                 doc
@@ -294,10 +356,18 @@ export class PdfFormat extends AbstractChecklistFormat {
                 break;
             }
 
+            let drawLine = true;
+            if (nextItem && (nextItem.indent || 0) > (item.indent || 0)) {
+              drawLine = false;
+            }
             if (
-              item.type !== ChecklistItem_Type.ITEM_SPACE &&
-              item.type != ChecklistItem_Type.ITEM_TITLE
+              item.type == ChecklistItem_Type.ITEM_SPACE ||
+              item.type == ChecklistItem_Type.ITEM_TITLE
             ) {
+              drawLine = false;
+            }
+
+            if (drawLine) {
               const lineY = y - 3;
               doc
                 .moveTo(getColumnX(currentColumn), lineY)
