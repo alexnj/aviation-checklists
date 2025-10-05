@@ -29,17 +29,6 @@ export class PdfFormat extends AbstractChecklistFormat {
       doc.on('data', (chunk) => buffers.push(chunk));
       doc.on('end', () => resolve(Buffer.concat(buffers)));
 
-      // Header
-      doc
-        .fontSize(14)
-        .font('Helvetica-Bold')
-        .text(checklist.metadata?.makeAndModel || '', { align: 'center' });
-      doc
-        .fontSize(10)
-        .font('Helvetica')
-        .text(checklist.metadata?.name || '', { align: 'center' });
-      doc.moveDown(2);
-
       // Column layout
       const numColumns = 4;
       const gutterWidth = 10;
@@ -49,12 +38,6 @@ export class PdfFormat extends AbstractChecklistFormat {
       // Total gutter width is 2 normal gutters and one double-width center gutter
       const totalGutterWidth = 2 * gutterWidth + centerGutterWidth;
       const columnWidth = (pageContentWidth - totalGutterWidth) / numColumns;
-
-      let currentColumn = 0;
-      const startY = doc.y;
-      let y = startY;
-      const pageBottom = doc.page.height - doc.page.margins.bottom;
-      let pageNumber = 1;
 
       const getColumnX = (col: number) => {
         let x = doc.page.margins.left;
@@ -70,6 +53,35 @@ export class PdfFormat extends AbstractChecklistFormat {
         return x;
       };
 
+      // Header
+      const headerWidth = columnWidth * 2 + gutterWidth;
+      doc
+        .fontSize(14)
+        .font('Helvetica-Bold')
+        .text(
+          checklist.metadata?.makeAndModel || '',
+          getColumnX(0),
+          doc.page.margins.top,
+          {
+            width: headerWidth,
+            align: 'center',
+          }
+        );
+      doc
+        .fontSize(10)
+        .font('Helvetica')
+        .text(checklist.metadata?.name || '', getColumnX(0), doc.y, {
+          width: headerWidth,
+          align: 'center',
+        });
+      doc.moveDown(2);
+
+      let currentColumn = 0;
+      const startY = doc.y;
+      let y = startY;
+      const pageBottom = doc.page.height - doc.page.margins.bottom;
+      let pageNumber = 1;
+
       const moveToNextColumn = () => {
         currentColumn++;
         if (currentColumn >= numColumns) {
@@ -78,12 +90,16 @@ export class PdfFormat extends AbstractChecklistFormat {
           currentColumn = 0;
           y = doc.page.margins.top;
         } else {
-          y = pageNumber === 1 ? startY : doc.page.margins.top;
+          if (pageNumber === 1 && currentColumn >= 2) {
+            y = doc.page.margins.top;
+          } else {
+            y = pageNumber === 1 ? startY : doc.page.margins.top;
+          }
         }
       };
 
       const checkSpace = (height: number) => {
-        if (y + height > pageBottom) {
+        if (y + height >= pageBottom) {
           moveToNextColumn();
         }
       };
@@ -120,7 +136,6 @@ export class PdfFormat extends AbstractChecklistFormat {
 
           for (const item of checklistInGroup.items) {
             const indent = (item.indent || 0) * 10;
-            const itemX = getColumnX(currentColumn) + indent;
             const itemWidth = columnWidth - indent;
 
             let itemHeight = 0;
@@ -171,6 +186,7 @@ export class PdfFormat extends AbstractChecklistFormat {
             }
 
             checkSpace(itemHeight);
+            const itemX = getColumnX(currentColumn) + indent;
 
             // Render item
             doc.fontSize(8);
