@@ -6,6 +6,7 @@ import {
 import { AbstractChecklistFormat } from '../efis-editor/src/model/formats/abstract-format';
 
 const RENDER_GROUP_HEADING = false;
+const MAX_INDENTED_TEXT_HEIGHT = 10;
 const COLOR_BLUE = '#0000FF';
 const COLOR_RED = '#FF0000';
 const COLOR_AMBER = '#CF3400';
@@ -28,7 +29,7 @@ export class PdfFormat extends AbstractChecklistFormat {
       const doc = new PDFDocument({
         size: 'LETTER',
         layout: 'landscape',
-        margins: { top: 10, bottom: 10, left: 10, right: 10 },
+        margins: { top: 20, bottom: 20, left: 15, right: 15 },
       });
 
       const buffers: Buffer[] = [];
@@ -293,6 +294,22 @@ export class PdfFormat extends AbstractChecklistFormat {
 
             let itemHeight = calculateItemHeight(item, doc, itemWidth);
 
+            if (
+              ((item.indent || 0) > 0 ||
+                item.type == ChecklistItem_Type.ITEM_WARNING ||
+                item.type == ChecklistItem_Type.ITEM_PLAINTEXT) &&
+              itemHeight > MAX_INDENTED_TEXT_HEIGHT
+            ) {
+              // Skip items that are indented and over max permitted height.
+              continue;
+            }
+            if (
+              item.type == ChecklistItem_Type.ITEM_TITLE &&
+              itemHeight * 2 + y >= pageBottom
+            ) {
+              console.log(item.prompt, 'spilling over');
+              moveToNextColumn();
+            }
             checkSpace(itemHeight);
             const itemX = getColumnX(currentColumn) + indent;
 
