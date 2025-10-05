@@ -8,7 +8,7 @@ import {
 } from '../efis-editor/src/model/formats/format-registry';
 import { PdfFormat } from './pdf-format';
 
-FORMAT_REGISTRY.register(PdfFormat, FormatId.PDF4, 'Printable 4-column PDF', {
+FORMAT_REGISTRY.register(PdfFormat, FormatId.PDF4, 'Printable 4-col PDF', {
   supportsImport: false,
   extension: '.pdf',
 });
@@ -144,7 +144,7 @@ async function main() {
   const outputMdFile = 'output.md';
 
   const outputFormats = FORMAT_REGISTRY.getSupportedOutputFormats()
-    .filter(({ id }) => !['json'].includes(id))
+    .filter(({ id }) => !['json', 'pdf'].includes(id))
     .sort((a, b) => a.name.localeCompare(b.name));
 
   const header =
