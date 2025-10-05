@@ -9,5 +9,9 @@
   },
   "devDependencies": {
     "typescript": "~5.9.2"
+  },
+  "dependencies": {
+    "@types/pdfkit": "^0.17.3",
+    "pdfkit": "^0.17.2"
   }
 }
