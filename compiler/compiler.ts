@@ -8,7 +8,7 @@ import {
 } from '../efis-editor/src/model/formats/format-registry';
 import { PdfFormat } from './pdf-format';
 
-FORMAT_REGISTRY.register(PdfFormat, FormatId.PDF4, 'Printable 4-col PDF', {
+FORMAT_REGISTRY.register(PdfFormat, FormatId.PDF4, '4-col printable PDF', {
   supportsImport: false,
   extension: '.pdf',
 });
