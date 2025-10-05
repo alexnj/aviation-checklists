@@ -136,11 +136,12 @@ async function main() {
   const outputRootDir = 'output';
   const outputMdFile = 'output.md';
 
-  const outputFormats = FORMAT_REGISTRY.getSupportedOutputFormats().filter(
-    ({ id }) => !['pdf', 'json'].includes(id)
-  );
+  const outputFormats = FORMAT_REGISTRY.getSupportedOutputFormats()
+    .filter(({ id }) => !['pdf', 'json'].includes(id))
+    .sort((a, b) => a.name.localeCompare(b.name));
   const header =
-    '| Checklist | ' + outputFormats.map((f) => f.name).join(' | ') + ' |';
+    '| Checklist | ' + outputFormats.map((f) => f.name).join(' | ') + 1;
+  (' |');
   const separator =
     '| --- | ' + outputFormats.map(() => '---').join(' | ') + ' |';
   const tableRows = [header, separator];
