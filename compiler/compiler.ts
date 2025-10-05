@@ -103,7 +103,8 @@ async function convertFile(
         outputFile,
         Buffer.from(await writtenFile.arrayBuffer())
       );
-      const downloadUrl = RELEASE_URL_PREFIX + outputFileName;
+      const downloadUrl =
+        RELEASE_URL_PREFIX + outputFile.split('/').slice(2).join('.');
       links[id] = `[${id}](${downloadUrl})`;
     }
     return links;
