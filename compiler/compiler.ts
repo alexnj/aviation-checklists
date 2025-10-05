@@ -6,6 +6,13 @@ import {
   FORMAT_REGISTRY,
   serializeChecklistFile,
 } from '../efis-editor/src/model/formats/format-registry';
+import { PdfFormat } from './pdf-format';
+
+FORMAT_REGISTRY.register(PdfFormat, FormatId.PDF4, 'Printable 4-column PDF', {
+  supportsImport: false,
+  extension: '.pdf',
+});
+
 const RELEASE_URL_PREFIX = '../../releases/download/latest/';
 
 // Polyfill for window.crypto and window.crypto.subtle for Node.js
@@ -88,7 +95,7 @@ async function convertFile(
       name,
       extension,
     } of FORMAT_REGISTRY.getSupportedOutputFormats()) {
-      if (['pdf', 'json'].includes(id)) {
+      if (['json', 'pdf'].includes(id)) {
         console.log(`Skipping ${id} format.`);
         continue;
       }
@@ -137,8 +144,9 @@ async function main() {
   const outputMdFile = 'output.md';
 
   const outputFormats = FORMAT_REGISTRY.getSupportedOutputFormats()
-    .filter(({ id }) => !['pdf', 'json'].includes(id))
+    .filter(({ id }) => !['json'].includes(id))
     .sort((a, b) => a.name.localeCompare(b.name));
+
   const header =
     '| Checklist | ' + outputFormats.map((f) => f.name).join(' | ') + ' |';
   const separator =

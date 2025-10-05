@@ -29,6 +29,10 @@ jobs:
         run: npm install
         working-directory: efis-editor
 
+      - name: Patch EFIS-editor with specific changes
+        run: git apply ../efis-editor.patch
+        working-directory: efis-editor
+
       - name: Generate efis-editor protobuf files
         run: npm run genproto
         working-directory: efis-editor
