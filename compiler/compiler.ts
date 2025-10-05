@@ -6,6 +6,7 @@ import {
   FORMAT_REGISTRY,
   serializeChecklistFile,
 } from '../efis-editor/src/model/formats/format-registry';
+const RELEASE_URL_PREFIX = '../../releases/download/latest/';
 
 // Polyfill for window.crypto and window.crypto.subtle for Node.js
 import { randomBytes, webcrypto } from 'crypto';
@@ -91,19 +92,19 @@ async function convertFile(
         console.log(`Skipping ${id} format.`);
         continue;
       }
-      const outputFile = path.join(
-        outputDir,
+      const outputFileName =
         parsedInputPath.name +
-          `.${id}` +
-          ('.' + id.toString() === extension ? '' : extension)
-      );
+        `.${id}` +
+        ('.' + id.toString() === extension ? '' : extension);
+      const outputFile = path.join(outputDir, outputFileName);
       const writtenFile = await serializeChecklistFile(checklistFile, id);
       console.log(`Saving ${name} as ${outputFile}`);
       fs.writeFileSync(
         outputFile,
         Buffer.from(await writtenFile.arrayBuffer())
       );
-      links[id] = `[${id}](${outputFile})`;
+      const downloadUrl = RELEASE_URL_PREFIX + outputFileName;
+      links[id] = `[${id}](${downloadUrl})`;
     }
     return links;
   } catch (error) {
@@ -138,9 +139,7 @@ async function main() {
     ({ id }) => !['pdf', 'json'].includes(id)
   );
   const header =
-    '| Checklist | ' +
-    outputFormats.map((f) => f.name).join(' | ') +
-    ' |';
+    '| Checklist | ' + outputFormats.map((f) => f.name).join(' | ') + ' |';
   const separator =
     '| --- | ' + outputFormats.map(() => '---').join(' | ') + ' |';
   const tableRows = [header, separator];
