@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+  pull_request:
 
 jobs:
   build:
@@ -62,6 +63,7 @@ jobs:
           done
 
       - uses: 'softprops/action-gh-release@v1'
+        if: github.ref == 'refs/heads/main'
         with:
           tag_name: 'latest'
           name: 'Automatic Release Build'
