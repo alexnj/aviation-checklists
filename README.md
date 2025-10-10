@@ -1,22 +1,8 @@
 # General Aviation Checklists
 
-This repository is a collection of different general aviation checklists.
-
-During my training I realized that students and seasoned pilots alike,
-despite using EFBs and avionics stacks capable of running checklists,
-seldom do checklists in them.
-
-I found electronic checklists superior for the reason that they keep track of
-where I am in the list, and depending on placement of EFB in the cockpit,
-it reduces number of times I have to look down and away from where my eyes
-should be. I still carry a paper checklist for redundancy, but I've switched
-over to electronic checklists for primary use.
-
-This project is mainly intended to be a template for you to maintain your
-checklists, in an editable and shareable form. Storing checklists in plain text
-and in open source form should foster wider usage of electronic checklists
-and the use of checklists overall with less missed steps. That should in turn
-improve safety. Or, that's the goal and intention of this project.
+This repository is a template for creating and sharing electronic (and paper)
+general aviation checklists and provides automation for compiling it into
+several popular EFIS/EFB compliant formats.
 
 ## Using
 
@@ -63,6 +49,24 @@ as described in the operating handbook for it.
 
 This project is an independent effort and is not endorsed or supported by
 any company.
+
+## Background
+
+During my training I realized that students and seasoned pilots alike,
+despite using EFBs and avionics stacks capable of running checklists,
+seldom do checklists in them.
+
+I found electronic checklists superior for the reason that they keep track of
+where I am in the list, and depending on placement of EFB in the cockpit,
+it reduces number of times I have to look down and away from where my eyes
+should be. I still carry a paper checklist for redundancy, but I've switched
+over to electronic checklists for primary use.
+
+This project is mainly intended to be a template for you to maintain your
+checklists, in an editable and shareable form. Storing checklists in plain text
+and in open source form should foster wider usage of electronic checklists
+and the use of checklists overall with less missed steps. That should in turn
+improve safety. Or, that's the goal and intention of this project.
 
 ## License
 
