@@ -26,15 +26,15 @@ improve safety. Or, that's the goal and intention of this project.
 
 > [!IMPORTANT]
 > Read the Disclaimer section below carefully before proceeding.
-  
+
+The recommended usage pattern is to click `Use this template` > `Create a new repository` at the top right of this page, that will create your own checklist repository based on this template. Modify the checklist/ folder contents to add your own JSON checklist definitions or modify one of the provided one to suit your own needs. The GitHub actions integrated into this template will produce EFIS compatible checklists as artifacts of automated builds and releases for your own copy of the repository.
+
 All the checklists are in the `checklists/` directory in readable plain text (JSON) form.
-Each commit builds them into a few EFIS compatible formats using [efis-editor](https://github.com/rdamazio/efis-editor) project.
+GitHub Actions integrated into this template repository builds each commit into a few EFIS compatible formats using [efis-editor](https://github.com/rdamazio/efis-editor) project, as well as a kneeboard friendly foldable PDF rendering (see screenshot on the right).
+
 Compiled EFIS artifacts can be found on the [Releases](https://github.com/alexnj/aviation-checklists/releases/latest) page.
 
-The project now renders kneeboard-compatible foldable 4-column PDF rendering of each checklist, like in the screenshot on the right.
-
-For modifying or authoring new checklists, I highly recommend [EFIS editor](https://rdamazio.github.io/efis-editor/).
-It can load the JSON checklists and you can export them into any of the supported formats, or as JSON again to commit back to the repo.
+For modifying or authoring new checklists, I highly recommend [EFIS editor](https://rdamazio.github.io/efis-editor/). It can load the JSON checklists and you can export them into any of the supported formats, or as JSON again to commit back to the repo.
 
 ## Disclaimer
 
@@ -71,9 +71,5 @@ See [LICENSE](./LICENSE) for details about copyright and redistribution.
 
 ## Contributing
 
-The best way to use this is to fork the repo, and modify or include your own
-checklists. The GitHub actions integrated into this repository will produce
-EFIS compatible checklists as artifacts of automated builds and releases.
-
 If you find a way to improve these checklists, or the code that processes them,
-I would be happy to accept those contributions. Just file an issue or make a PR!
+I would be happy to accept those as PR contributions. Just file an issue or make a PR!
