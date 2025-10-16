@@ -7,5 +7,12 @@ on:
   pull_request:
 
 jobs:
-  compile:
-    uses: alexnj/aviation-checklist-actions/.github/workflows/compile.yml@main
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout current repository
+        uses: actions/checkout@v4
+
+      - name: Compile checklists
+        uses: alexnj/aviation-checklist-actions/.github/workflows/compile.yml@main
