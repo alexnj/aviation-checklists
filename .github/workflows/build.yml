@@ -9,5 +9,3 @@ on:
 jobs:
   compile:
     uses: alexnj/aviation-checklist-actions/.github/workflows/compile.yml@main
-    with:
-      efis-editor-patch: efis-editor.patch
