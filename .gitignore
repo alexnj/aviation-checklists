@@ -1,0 +1,4 @@
+node_modules
+compiler/*.js
+output/*
+efis-editor

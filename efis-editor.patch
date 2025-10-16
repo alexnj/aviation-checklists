@@ -1,0 +1,10 @@
+diff --git a/src/model/formats/format-id.ts b/src/model/formats/format-id.ts
+index 52811cc..60be418 100644
+--- a/src/model/formats/format-id.ts
++++ b/src/model/formats/format-id.ts
+@@ -8,4 +8,5 @@ export const enum FormatId {
+   GRT = 'grt',
+   JSON = 'json',
+   PDF = 'pdf',
++  PDF4 = '4col',
+ }
