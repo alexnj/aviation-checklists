@@ -1,13 +1,12 @@
 {
   "metadata": {
-    "name": "C172M",
-    "makeAndModel": "Cessna 172M Skyhawk",
-    "aircraftInfo": "Allan Crabill's 172M checklist",
-    "modifiedTime": 1727884800
+    "name": "C182Q",
+    "makeAndModel": "Cessna Skylane 182Q (C182)",
+    "aircraftInfo": "Alex's Skylane 182Q checklist"
   },
   "groups": [
     {
-      "title": "Preflight",
+      "title": "Normal Procedures",
       "checklists": [
         {
           "title": "Preflight Inspection",
@@ -18,22 +17,17 @@
             },
             {
               "prompt": "Hobbs, Tach",
-              "expectation": "CHECK, VERIFY",
+              "expectation": "CHECK, VERIFY, RECORD",
               "type": "ITEM_CHALLENGE_RESPONSE"
             },
             {
-              "prompt": "Documents (AROW)",
+              "prompt": "Documents (ARROW)",
               "expectation": "CHECK",
               "type": "ITEM_CHALLENGE_RESPONSE"
             },
             {
               "prompt": "Control Lock",
               "expectation": "REMOVE",
-              "type": "ITEM_CHALLENGE_RESPONSE"
-            },
-            {
-              "prompt": "Ignition Switch",
-              "expectation": "OFF",
               "type": "ITEM_CHALLENGE_RESPONSE"
             },
             {
@@ -49,6 +43,11 @@
             {
               "prompt": "Fuel Quantity Indicators",
               "expectation": "CHECK",
+              "type": "ITEM_CHALLENGE_RESPONSE"
+            },
+            {
+              "prompt": "Turn Coordinator Gyro",
+              "expectation": "AUDIBLE",
               "type": "ITEM_CHALLENGE_RESPONSE"
             },
             {
@@ -74,6 +73,11 @@
             {
               "prompt": "Baggage Door",
               "expectation": "SECURE",
+              "type": "ITEM_CHALLENGE_RESPONSE"
+            },
+            {
+              "prompt": "Keys available",
+              "expectation": "VERIFY",
               "type": "ITEM_CHALLENGE_RESPONSE"
             },
             {
@@ -139,28 +143,13 @@
               "type": "ITEM_TITLE"
             },
             {
-              "prompt": "Fuel Strainer",
-              "expectation": "DRAIN (4s)",
-              "type": "ITEM_CHALLENGE_RESPONSE"
-            },
-            {
-              "prompt": "Oil Dip Stick (Min 6 qts)",
-              "expectation": "CHECK",
-              "type": "ITEM_CHALLENGE_RESPONSE"
-            },
-            {
-              "prompt": "Access Door",
-              "expectation": "SECURE",
+              "prompt": "Right Static Port",
+              "expectation": "CLEAR",
               "type": "ITEM_CHALLENGE_RESPONSE"
             },
             {
               "prompt": "Cooling Air Inlets",
               "expectation": "CLEAR",
-              "type": "ITEM_CHALLENGE_RESPONSE"
-            },
-            {
-              "prompt": "Alternator Belt",
-              "expectation": "CHECK",
               "type": "ITEM_CHALLENGE_RESPONSE"
             },
             {
@@ -179,7 +168,22 @@
               "type": "ITEM_CHALLENGE_RESPONSE"
             },
             {
-              "prompt": "Static Port",
+              "prompt": "Oil Dip Stick (Min 9 qts)",
+              "expectation": "CHECK",
+              "type": "ITEM_CHALLENGE_RESPONSE"
+            },
+            {
+              "prompt": "Fuel Strainer",
+              "expectation": "DRAIN (4s)",
+              "type": "ITEM_CHALLENGE_RESPONSE"
+            },
+            {
+              "prompt": "Access Doors",
+              "expectation": "SECURE",
+              "type": "ITEM_CHALLENGE_RESPONSE"
+            },
+            {
+              "prompt": "Left Static Port",
               "expectation": "CLEAR",
               "type": "ITEM_CHALLENGE_RESPONSE"
             },
@@ -188,7 +192,7 @@
               "type": "ITEM_TITLE"
             },
             {
-              "prompt": "Fuel Tank Sump Drain",
+              "prompt": "Fuel Tank Sump Drains (5)",
               "expectation": "CHECK",
               "type": "ITEM_CHALLENGE_RESPONSE"
             },
@@ -208,8 +212,8 @@
               "type": "ITEM_CHALLENGE_RESPONSE"
             },
             {
-              "prompt": "Stall Warning Opening",
-              "expectation": "CLEAR",
+              "prompt": "Stall Warning Vane",
+              "expectation": "CLEAR/CHECK",
               "type": "ITEM_CHALLENGE_RESPONSE"
             },
             {
@@ -236,6 +240,11 @@
               "prompt": "Aileron, Flap",
               "expectation": "CHECK",
               "type": "ITEM_CHALLENGE_RESPONSE"
+            },
+            {
+              "prompt": "Final Walkaround",
+              "expectation": "COMPLETE",
+              "type": "ITEM_CHALLENGE_RESPONSE"
             }
           ]
         },
@@ -253,7 +262,7 @@
               "type": "ITEM_CHALLENGE_RESPONSE"
             },
             {
-              "prompt": "Seats/Seat Belts",
+              "prompt": "Seats/Seatbelts",
               "expectation": "ADJUST/SECURE",
               "type": "ITEM_CHALLENGE_RESPONSE"
             },
@@ -273,8 +282,18 @@
               "type": "ITEM_CHALLENGE_RESPONSE"
             },
             {
+              "prompt": "Avionics Master Switch",
+              "expectation": "OFF",
+              "type": "ITEM_CHALLENGE_RESPONSE"
+            },
+            {
               "prompt": "Fuel Selector Valve",
               "expectation": "BOTH",
+              "type": "ITEM_CHALLENGE_RESPONSE"
+            },
+            {
+              "prompt": "Cowl Flaps",
+              "expectation": "OPEN",
               "type": "ITEM_CHALLENGE_RESPONSE"
             },
             {
@@ -283,8 +302,13 @@
               "type": "ITEM_CHALLENGE_RESPONSE"
             },
             {
+              "prompt": "Propeller",
+              "expectation": "FULL IN (high RPM)",
+              "type": "ITEM_CHALLENGE_RESPONSE"
+            },
+            {
               "prompt": "Carb Heat",
-              "expectation": "OFF",
+              "expectation": "COLD",
               "type": "ITEM_CHALLENGE_RESPONSE"
             },
             {
@@ -295,6 +319,35 @@
             {
               "prompt": "Beacon",
               "expectation": "ON",
+              "type": "ITEM_CHALLENGE_RESPONSE"
+            },
+            {
+              "prompt": "Sentry",
+              "expectation": "ON",
+              "type": "ITEM_CHALLENGE_RESPONSE"
+            },
+            {
+              "prompt": "Foreflight & Recorders",
+              "type": "ITEM_TITLE"
+            },
+            {
+              "prompt": "Foreflight Devices",
+              "expectation": "CONNECTED",
+              "type": "ITEM_CHALLENGE_RESPONSE"
+            },
+            {
+              "prompt": "Foreflight Track Recording",
+              "expectation": "ON",
+              "type": "ITEM_CHALLENGE_RESPONSE"
+            },
+            {
+              "prompt": "Garmin Activity",
+              "expectation": "STARTED",
+              "type": "ITEM_CHALLENGE_RESPONSE"
+            },
+            {
+              "prompt": "Training Voice Recorder",
+              "expectation": "RECORDING",
               "type": "ITEM_CHALLENGE_RESPONSE"
             },
             {
@@ -309,12 +362,12 @@
           "items": [
             {
               "prompt": "Throttle",
-              "expectation": "OPEN 1/2\"",
+              "expectation": "OPEN ¼ IN",
               "type": "ITEM_CHALLENGE_RESPONSE"
             },
             {
               "prompt": "Prime",
-              "expectation": "0-4 STROKES",
+              "expectation": "3X when COLD, LOCKED",
               "type": "ITEM_CHALLENGE_RESPONSE"
             },
             {
@@ -323,43 +376,8 @@
               "type": "ITEM_CHALLENGE_RESPONSE"
             },
             {
-              "prompt": "Ignition Switch",
+              "prompt": "Ignition",
               "expectation": "STARTER ENGAGE",
-              "type": "ITEM_CHALLENGE_RESPONSE"
-            },
-            {
-              "prompt": "Throttle",
-              "expectation": "1000 RPM",
-              "type": "ITEM_CHALLENGE_RESPONSE"
-            },
-            {
-              "prompt": "Oil Pressure",
-              "expectation": "CHECK",
-              "type": "ITEM_CHALLENGE_RESPONSE"
-            }
-          ]
-        },
-        {
-          "title": "Engine Start - Flooded",
-          "items": [
-            {
-              "prompt": "Throttle",
-              "expectation": "HALF to FULL OPEN",
-              "type": "ITEM_CHALLENGE_RESPONSE"
-            },
-            {
-              "prompt": "Propeller Area",
-              "expectation": "CLEAR",
-              "type": "ITEM_CHALLENGE_RESPONSE"
-            },
-            {
-              "prompt": "Ignition Switch",
-              "expectation": "STARTER ENGAGE",
-              "type": "ITEM_CHALLENGE_RESPONSE"
-            },
-            {
-              "prompt": "Mixture (when engine fires)",
-              "expectation": "RICH",
               "type": "ITEM_CHALLENGE_RESPONSE"
             },
             {
@@ -398,7 +416,7 @@
               "type": "ITEM_CHALLENGE_RESPONSE"
             },
             {
-              "prompt": "Headset",
+              "prompt": "Headset ANR",
               "expectation": "ON",
               "type": "ITEM_CHALLENGE_RESPONSE"
             },
@@ -408,7 +426,7 @@
               "type": "ITEM_CHALLENGE_RESPONSE"
             },
             {
-              "prompt": "ATIS (KLVK 119.65)",
+              "prompt": "ATIS",
               "expectation": "RECORD",
               "type": "ITEM_CHALLENGE_RESPONSE"
             },
@@ -419,12 +437,27 @@
             },
             {
               "prompt": "Heading Indicator",
-              "expectation": "SET",
+              "expectation": "CHECK",
+              "type": "ITEM_CHALLENGE_RESPONSE"
+            },
+            {
+              "prompt": "Compass Deviation Card",
+              "expectation": "CHECK",
               "type": "ITEM_CHALLENGE_RESPONSE"
             },
             {
               "prompt": "Engine Instruments",
               "expectation": "CHECK",
+              "type": "ITEM_CHALLENGE_RESPONSE"
+            },
+            {
+              "prompt": "Parking Brake",
+              "expectation": "RELEASE",
+              "type": "ITEM_CHALLENGE_RESPONSE"
+            },
+            {
+              "prompt": "Ground",
+              "expectation": "CONTACT",
               "type": "ITEM_CHALLENGE_RESPONSE"
             }
           ]
@@ -438,11 +471,6 @@
               "type": "ITEM_CHALLENGE_RESPONSE"
             },
             {
-              "prompt": "Ground (KLVK 121.6)",
-              "expectation": "CONTACT",
-              "type": "ITEM_CHALLENGE_RESPONSE"
-            },
-            {
               "prompt": "Gyroscopic Instruments",
               "expectation": "CHECK",
               "type": "ITEM_CHALLENGE_RESPONSE"
@@ -452,6 +480,11 @@
         {
           "title": "Runup",
           "items": [
+            {
+              "prompt": "Nose Gear",
+              "expectation": "STRAIGHT",
+              "type": "ITEM_CHALLENGE_RESPONSE"
+            },
             {
               "prompt": "Brakes",
               "expectation": "HOLD",
@@ -478,7 +511,17 @@
               "type": "ITEM_CHALLENGE_RESPONSE"
             },
             {
+              "prompt": "Cowl Flaps",
+              "expectation": "OPEN",
+              "type": "ITEM_CHALLENGE_RESPONSE"
+            },
+            {
               "prompt": "Elevator Trim",
+              "expectation": "TAKEOFF",
+              "type": "ITEM_CHALLENGE_RESPONSE"
+            },
+            {
+              "prompt": "Rudder Trim",
               "expectation": "TAKEOFF",
               "type": "ITEM_CHALLENGE_RESPONSE"
             },
@@ -493,27 +536,32 @@
               "type": "ITEM_CHALLENGE_RESPONSE"
             },
             {
-              "prompt": "Magnetos",
-              "expectation": "MAX DROP 125, DELTA 50",
-              "type": "ITEM_CHALLENGE_RESPONSE"
-            },
-            {
               "prompt": "Engine Instruments",
               "expectation": "CHECK, GREEN",
               "type": "ITEM_CHALLENGE_RESPONSE"
             },
             {
+              "prompt": "Magnetos",
+              "expectation": "MAX DROP 150, DELTA 50",
+              "type": "ITEM_CHALLENGE_RESPONSE"
+            },
+            {
+              "prompt": "Propeller",
+              "expectation": "CYCLE 3X",
+              "type": "ITEM_CHALLENGE_RESPONSE"
+            },
+            {
+              "prompt": "Ammeter",
+              "expectation": "CHECK",
+              "type": "ITEM_CHALLENGE_RESPONSE"
+            },
+            {
               "prompt": "Carb Heat",
-              "expectation": "CHECK",
+              "expectation": "ON, CHECK RPM DROP, OFF",
               "type": "ITEM_CHALLENGE_RESPONSE"
             },
             {
-              "prompt": "Vacuum",
-              "expectation": "CHECK",
-              "type": "ITEM_CHALLENGE_RESPONSE"
-            },
-            {
-              "prompt": "Alternator",
+              "prompt": "Suction Gauge",
               "expectation": "CHECK",
               "type": "ITEM_CHALLENGE_RESPONSE"
             },
@@ -523,48 +571,13 @@
               "type": "ITEM_CHALLENGE_RESPONSE"
             },
             {
-              "prompt": "Mixture",
-              "expectation": "LEAN",
+              "prompt": "Throttle Friction",
+              "expectation": "ADJUST",
               "type": "ITEM_CHALLENGE_RESPONSE"
             },
             {
               "prompt": "Alternate Static Source",
               "expectation": "CHECK",
-              "type": "ITEM_CHALLENGE_RESPONSE"
-            },
-            {
-              "prompt": "Sentry",
-              "expectation": "CHECK",
-              "type": "ITEM_CHALLENGE_RESPONSE"
-            }
-          ]
-        },
-        {
-          "title": "IFR",
-          "items": [
-            {
-              "prompt": "Clearance (CRAFT)",
-              "expectation": "RECORD",
-              "type": "ITEM_CHALLENGE_RESPONSE"
-            },
-            {
-              "prompt": "DP (OAT, Climb Gradient)",
-              "expectation": "CHECK",
-              "type": "ITEM_CHALLENGE_RESPONSE"
-            },
-            {
-              "prompt": "Avionics",
-              "expectation": "SET",
-              "type": "ITEM_CHALLENGE_RESPONSE"
-            },
-            {
-              "prompt": "Heading Bug",
-              "expectation": "SET",
-              "type": "ITEM_CHALLENGE_RESPONSE"
-            },
-            {
-              "prompt": "Transponder (Squawk Code, ALT)",
-              "expectation": "SET",
               "type": "ITEM_CHALLENGE_RESPONSE"
             }
           ]
@@ -583,8 +596,13 @@
               "type": "ITEM_CHALLENGE_RESPONSE"
             },
             {
-              "prompt": "Seat Belts",
-              "expectation": "SECURED",
+              "prompt": "Seat Backs/Belts",
+              "expectation": "UPRIGHT/SECURED",
+              "type": "ITEM_CHALLENGE_RESPONSE"
+            },
+            {
+              "prompt": "Pitot Heat",
+              "expectation": "AS REQUIRED",
               "type": "ITEM_CHALLENGE_RESPONSE"
             },
             {
@@ -593,12 +611,17 @@
               "type": "ITEM_CHALLENGE_RESPONSE"
             },
             {
-              "prompt": "Heading Indicator",
+              "prompt": "Sentry",
+              "expectation": "CONFIRM TRAFFIC",
+              "type": "ITEM_CHALLENGE_RESPONSE"
+            },
+            {
+              "prompt": "Navigation",
               "expectation": "SET",
               "type": "ITEM_CHALLENGE_RESPONSE"
             },
             {
-              "prompt": "GPS, User Fields, Frequencies",
+              "prompt": "Frequencies",
               "expectation": "SET",
               "type": "ITEM_CHALLENGE_RESPONSE"
             },
@@ -608,12 +631,22 @@
               "type": "ITEM_CHALLENGE_RESPONSE"
             },
             {
-              "prompt": "Elevator Trim",
-              "expectation": "SET",
+              "prompt": "Autopilot",
+              "expectation": "OFF",
               "type": "ITEM_CHALLENGE_RESPONSE"
             },
             {
-              "prompt": "Flaps (0-Normal, 10- Short/Soft Fld)",
+              "prompt": "Elevator Trim",
+              "expectation": "TAKEOFF",
+              "type": "ITEM_CHALLENGE_RESPONSE"
+            },
+            {
+              "prompt": "Rudder Trim",
+              "expectation": "TAKEOFF",
+              "type": "ITEM_CHALLENGE_RESPONSE"
+            },
+            {
+              "prompt": "Flaps (0-Normal, 20° Short/Soft Fld)",
               "expectation": "SET",
               "type": "ITEM_CHALLENGE_RESPONSE"
             },
@@ -633,23 +666,22 @@
               "type": "ITEM_CHALLENGE_RESPONSE"
             },
             {
+              "prompt": "Cowl Flaps",
+              "expectation": "OPEN",
+              "type": "ITEM_CHALLENGE_RESPONSE"
+            },
+            {
               "prompt": "Doors, Windows",
               "expectation": "SECURED",
               "type": "ITEM_CHALLENGE_RESPONSE"
             },
             {
-              "prompt": "Tower (KLVK 118.1)",
+              "prompt": "Tower",
               "expectation": "CONTACT",
               "type": "ITEM_CHALLENGE_RESPONSE"
             }
           ]
-        }
-      ],
-      "category": "normal"
-    },
-    {
-      "title": "Takeoff",
-      "checklists": [
+        },
         {
           "title": "Normal Takeoff",
           "items": [
@@ -670,12 +702,12 @@
             },
             {
               "prompt": "Rotate (VR)",
-              "expectation": "55 KIAS",
+              "expectation": "50 KIAS",
               "type": "ITEM_CHALLENGE_RESPONSE"
             },
             {
               "prompt": "Climb",
-              "expectation": "70-80 KIAS",
+              "expectation": "80 KIAS",
               "type": "ITEM_CHALLENGE_RESPONSE"
             }
           ]
@@ -684,6 +716,16 @@
           "title": "Short Field Takeoff",
           "items": [
             {
+              "prompt": "Wing Flaps",
+              "expectation": "20°",
+              "type": "ITEM_CHALLENGE_RESPONSE"
+            },
+            {
+              "prompt": "Carb Heat",
+              "expectation": "COLD",
+              "type": "ITEM_CHALLENGE_RESPONSE"
+            },
+            {
               "prompt": "Brakes",
               "expectation": "HOLD",
               "type": "ITEM_CHALLENGE_RESPONSE"
@@ -691,6 +733,11 @@
             {
               "prompt": "Throttle",
               "expectation": "FULL FORWARD",
+              "type": "ITEM_CHALLENGE_RESPONSE"
+            },
+            {
+              "prompt": "Propeller",
+              "expectation": "2400 RPM",
               "type": "ITEM_CHALLENGE_RESPONSE"
             },
             {
@@ -715,38 +762,42 @@
             },
             {
               "prompt": "Climb",
-              "expectation": "55 KIAS",
+              "expectation": "57 KIAS",
               "type": "ITEM_CHALLENGE_RESPONSE"
             },
             {
-              "prompt": "Flaps (after clearing obstacle)",
-              "expectation": "RETRACT",
+              "prompt": "Flaps (after clearing obstacle and 70 KIAS)",
+              "expectation": "RETRACT SLOWLY",
               "type": "ITEM_CHALLENGE_RESPONSE"
             },
             {
               "prompt": "Climb",
-              "expectation": "70-80 KIAS",
+              "expectation": "80 KIAS",
               "type": "ITEM_CHALLENGE_RESPONSE"
             }
           ]
-        }
-      ],
-      "category": "normal"
-    },
-    {
-      "title": "In Flight",
-      "checklists": [
+        },
         {
           "title": "Climb",
           "items": [
             {
-              "prompt": "Airspeed (1000' agl)",
-              "expectation": "75-90 KIAS",
+              "prompt": "Throttle",
+              "expectation": "23\"",
+              "type": "ITEM_CHALLENGE_RESPONSE"
+            },
+            {
+              "prompt": "Propeller",
+              "expectation": "2400 RPM",
+              "type": "ITEM_CHALLENGE_RESPONSE"
+            },
+            {
+              "prompt": "Airspeed (1000' AGL)",
+              "expectation": "85-95 KIAS",
               "type": "ITEM_CHALLENGE_RESPONSE"
             },
             {
               "prompt": "Mixture",
-              "expectation": "RICH, LEAN ABOVE 3000 MSL",
+              "expectation": "RICH, LEAN ABOVE 5000 MSL",
               "type": "ITEM_CHALLENGE_RESPONSE"
             },
             {
@@ -755,8 +806,48 @@
               "type": "ITEM_CHALLENGE_RESPONSE"
             },
             {
-              "prompt": "Elevator Trim",
-              "expectation": "SET",
+              "prompt": "Cowl Flaps",
+              "expectation": "OPEN as required",
+              "type": "ITEM_CHALLENGE_RESPONSE"
+            }
+          ]
+        },
+        {
+          "title": "Max Performance Climb",
+          "items": [
+            {
+              "prompt": "Airspeed",
+              "expectation": "78 KIAS at sea level to 72 KIAS at 10,000 feet",
+              "type": "ITEM_CHALLENGE_RESPONSE"
+            },
+            {
+              "prompt": "Throttle",
+              "expectation": "FULL",
+              "type": "ITEM_CHALLENGE_RESPONSE"
+            },
+            {
+              "prompt": "Propeller",
+              "expectation": "2400 RPM",
+              "type": "ITEM_CHALLENGE_RESPONSE"
+            },
+            {
+              "prompt": "Fuel Selector Valve",
+              "expectation": "BOTH",
+              "type": "ITEM_CHALLENGE_RESPONSE"
+            },
+            {
+              "prompt": "Mixture",
+              "expectation": "RICH, LEAN ABOVE 5000 MSL",
+              "type": "ITEM_CHALLENGE_RESPONSE"
+            },
+            {
+              "prompt": "Cowl Flaps",
+              "expectation": "OPEN",
+              "type": "ITEM_CHALLENGE_RESPONSE"
+            },
+            {
+              "prompt": "Engine Instruments",
+              "expectation": "CHECK, GREEN",
               "type": "ITEM_CHALLENGE_RESPONSE"
             }
           ]
@@ -765,13 +856,23 @@
           "title": "Cruise",
           "items": [
             {
-              "prompt": "Throttle (Max 80%)",
-              "expectation": "SET",
+              "prompt": "Throttle",
+              "expectation": "23\"",
               "type": "ITEM_CHALLENGE_RESPONSE"
             },
             {
-              "prompt": "Mixture",
-              "expectation": "AS REQUIRED",
+              "prompt": "Propeller",
+              "expectation": "2300 RPM",
+              "type": "ITEM_CHALLENGE_RESPONSE"
+            },
+            {
+              "prompt": "Cowl Flaps",
+              "expectation": "CLOSED",
+              "type": "ITEM_CHALLENGE_RESPONSE"
+            },
+            {
+              "prompt": "Elevator / Rudder trim",
+              "expectation": "SET",
               "type": "ITEM_CHALLENGE_RESPONSE"
             },
             {
@@ -780,13 +881,8 @@
               "type": "ITEM_CHALLENGE_RESPONSE"
             },
             {
-              "prompt": "Heading Indicator",
-              "expectation": "SET",
-              "type": "ITEM_CHALLENGE_RESPONSE"
-            },
-            {
-              "prompt": "Elevator Trim",
-              "expectation": "SET",
+              "prompt": "Mixture",
+              "expectation": "LEAN TO 380° CHT",
               "type": "ITEM_CHALLENGE_RESPONSE"
             },
             {
@@ -797,7 +893,7 @@
           ]
         },
         {
-          "title": "Before Approach (5 A's)",
+          "title": "Before Approach (5 A'S)",
           "items": [
             {
               "prompt": "ATIS",
@@ -830,17 +926,17 @@
           "title": "Descent",
           "items": [
             {
-              "prompt": "Heading Indicator",
-              "expectation": "SET",
+              "prompt": "Cowl Flaps",
+              "expectation": "CLOSED",
               "type": "ITEM_CHALLENGE_RESPONSE"
             },
             {
-              "prompt": "Mixture",
-              "expectation": "AS REQUIRED",
+              "prompt": "Carb Heat",
+              "expectation": "ON",
               "type": "ITEM_CHALLENGE_RESPONSE"
             },
             {
-              "prompt": "Throttle",
+              "prompt": "Throttle/Mixture",
               "expectation": "AS REQUIRED",
               "type": "ITEM_CHALLENGE_RESPONSE"
             },
@@ -870,34 +966,33 @@
               "type": "ITEM_CHALLENGE_RESPONSE"
             },
             {
+              "prompt": "Propeller",
+              "expectation": "FORWARD",
+              "type": "ITEM_CHALLENGE_RESPONSE"
+            },
+            {
               "prompt": "Carb Heat",
               "expectation": "ON",
               "type": "ITEM_CHALLENGE_RESPONSE"
             },
             {
-              "prompt": "Tower (KLVK 118.1)",
-              "expectation": "CONTACT",
+              "prompt": "Autopilot",
+              "expectation": "OFF",
               "type": "ITEM_CHALLENGE_RESPONSE"
             }
           ]
-        }
-      ],
-      "category": "normal"
-    },
-    {
-      "title": "Landing",
-      "checklists": [
+        },
         {
           "title": "Normal Landing",
           "items": [
             {
               "prompt": "Flaps",
-              "expectation": "30 DEG",
+              "expectation": "20-30°",
               "type": "ITEM_CHALLENGE_RESPONSE"
             },
             {
               "prompt": "Airspeed",
-              "expectation": "65 KIAS",
+              "expectation": "70 KIAS",
               "type": "ITEM_CHALLENGE_RESPONSE"
             }
           ]
@@ -907,7 +1002,7 @@
           "items": [
             {
               "prompt": "Flaps",
-              "expectation": "30-40 DEG",
+              "expectation": "40°",
               "type": "ITEM_CHALLENGE_RESPONSE"
             },
             {
@@ -921,49 +1016,53 @@
           "title": "Go Around",
           "items": [
             {
-              "prompt": "Throttle",
-              "expectation": "FULL FORWARD",
+              "prompt": "Power",
+              "expectation": "FULL",
+              "type": "ITEM_CHALLENGE_RESPONSE"
+            },
+            {
+              "prompt": "Cowl Flaps",
+              "expectation": "OPEN",
               "type": "ITEM_CHALLENGE_RESPONSE"
             },
             {
               "prompt": "Carb Heat",
-              "expectation": "OFF",
-              "type": "ITEM_CHALLENGE_RESPONSE"
-            },
-            {
-              "prompt": "Pitch",
-              "expectation": "HORIZON",
+              "expectation": "COLD",
               "type": "ITEM_CHALLENGE_RESPONSE"
             },
             {
               "prompt": "Flaps",
-              "expectation": "20 DEG",
+              "expectation": "RETRACT TO 20°",
               "type": "ITEM_CHALLENGE_RESPONSE"
             },
             {
               "prompt": "Airspeed",
-              "expectation": "60 KIAS",
-              "type": "ITEM_CHALLENGE_RESPONSE"
-            },
-            {
-              "prompt": "Flaps",
-              "expectation": "RETRACT",
+              "expectation": "55 KIAS",
               "type": "ITEM_CHALLENGE_RESPONSE"
             }
           ]
-        }
-      ],
-      "category": "normal"
-    },
-    {
-      "title": "Postflight",
-      "checklists": [
+        },
         {
           "title": "After Landing",
           "items": [
             {
               "prompt": "Flaps",
               "expectation": "UP",
+              "type": "ITEM_CHALLENGE_RESPONSE"
+            },
+            {
+              "prompt": "Cowl Flaps",
+              "expectation": "OPEN",
+              "type": "ITEM_CHALLENGE_RESPONSE"
+            },
+            {
+              "prompt": "Carb Heat",
+              "expectation": "COLD",
+              "type": "ITEM_CHALLENGE_RESPONSE"
+            },
+            {
+              "prompt": "Mixture",
+              "expectation": "LEAN",
               "type": "ITEM_CHALLENGE_RESPONSE"
             },
             {
@@ -977,28 +1076,13 @@
               "type": "ITEM_CHALLENGE_RESPONSE"
             },
             {
-              "prompt": "Carb Heat",
-              "expectation": "OFF",
-              "type": "ITEM_CHALLENGE_RESPONSE"
-            },
-            {
-              "prompt": "Mixture",
-              "expectation": "LEAN",
+              "prompt": "Elevator/Rudder Trim",
+              "expectation": "FOR TAKEOFF",
               "type": "ITEM_CHALLENGE_RESPONSE"
             },
             {
               "prompt": "Transponder (VFR, 1200, ALT)",
               "expectation": "SET",
-              "type": "ITEM_CHALLENGE_RESPONSE"
-            },
-            {
-              "prompt": "Elevator Trim",
-              "expectation": "FOR TAKEOFF",
-              "type": "ITEM_CHALLENGE_RESPONSE"
-            },
-            {
-              "prompt": "Ground (KLVK 121.6)",
-              "expectation": "CONTACT",
               "type": "ITEM_CHALLENGE_RESPONSE"
             }
           ]
@@ -1007,7 +1091,7 @@
           "title": "Securing",
           "items": [
             {
-              "prompt": "Avionics Master Switch",
+              "prompt": "Avionics / Electrical Switches",
               "expectation": "OFF",
               "type": "ITEM_CHALLENGE_RESPONSE"
             },
@@ -1022,18 +1106,18 @@
               "type": "ITEM_CHALLENGE_RESPONSE"
             },
             {
-              "prompt": "Master, Electrical Switches",
-              "expectation": "OFF",
-              "type": "ITEM_CHALLENGE_RESPONSE"
-            },
-            {
               "prompt": "Ignition Switch",
               "expectation": "OFF, KEY OUT",
               "type": "ITEM_CHALLENGE_RESPONSE"
             },
             {
+              "prompt": "Master Switch",
+              "expectation": "OFF",
+              "type": "ITEM_CHALLENGE_RESPONSE"
+            },
+            {
               "prompt": "Fuel Selector",
-              "expectation": "LEFT or RIGHT",
+              "expectation": "OFF",
               "type": "ITEM_CHALLENGE_RESPONSE"
             },
             {
@@ -1042,18 +1126,23 @@
               "type": "ITEM_CHALLENGE_RESPONSE"
             },
             {
-              "prompt": "Hobbs, Tach",
+              "prompt": "Hobbs/Tach",
               "expectation": "RECORD",
               "type": "ITEM_CHALLENGE_RESPONSE"
-            }
-          ]
-        },
-        {
-          "title": "Post Flight",
-          "items": [
+            },
             {
               "prompt": "Tire Chocks",
               "expectation": "INSTALL",
+              "type": "ITEM_CHALLENGE_RESPONSE"
+            },
+            {
+              "prompt": "Pitot / Inlet covers",
+              "expectation": "INSTALL",
+              "type": "ITEM_CHALLENGE_RESPONSE"
+            },
+            {
+              "prompt": "Wind shield",
+              "expectation": "WIPE",
               "type": "ITEM_CHALLENGE_RESPONSE"
             },
             {
@@ -1072,93 +1161,7 @@
       "category": "normal"
     },
     {
-      "title": "Abnormal",
-      "checklists": [
-        {
-          "title": "If Engine Fails to Start",
-          "items": [
-            {
-              "prompt": "Throttle",
-              "expectation": "FULL OPEN",
-              "type": "ITEM_CHALLENGE_RESPONSE"
-            },
-            {
-              "prompt": "Mixture",
-              "expectation": "IDLE CUTOFF",
-              "type": "ITEM_CHALLENGE_RESPONSE"
-            },
-            {
-              "prompt": "Cranking",
-              "expectation": "CONTINUE",
-              "type": "ITEM_CHALLENGE_RESPONSE"
-            },
-            {
-              "prompt": "Master Switch",
-              "expectation": "OFF",
-              "type": "ITEM_CHALLENGE_RESPONSE"
-            },
-            {
-              "prompt": "Ignition Switch",
-              "expectation": "OFF",
-              "type": "ITEM_CHALLENGE_RESPONSE"
-            },
-            {
-              "prompt": "Pilot, Passengers",
-              "expectation": "EVACUATE",
-              "type": "ITEM_CHALLENGE_RESPONSE"
-            }
-          ]
-        },
-        {
-          "title": "Ammeter (Excessive Charge)",
-          "items": [
-            {
-              "prompt": "Alternator",
-              "expectation": "OFF",
-              "type": "ITEM_CHALLENGE_RESPONSE"
-            },
-            {
-              "prompt": "Nonessential Electrical",
-              "expectation": "OFF",
-              "type": "ITEM_CHALLENGE_RESPONSE"
-            }
-          ]
-        },
-        {
-          "title": "'Volts' Illuminated",
-          "items": [
-            {
-              "prompt": "Avionics Master",
-              "expectation": "OFF",
-              "type": "ITEM_CHALLENGE_RESPONSE"
-            },
-            {
-              "prompt": "Alternator Circuit Breaker",
-              "expectation": "CHECK IN",
-              "type": "ITEM_CHALLENGE_RESPONSE"
-            },
-            {
-              "prompt": "Master Switch",
-              "expectation": "OFF then ON",
-              "type": "ITEM_CHALLENGE_RESPONSE"
-            },
-            {
-              "prompt": "Annunciator Panel",
-              "expectation": "EXTINGUISHED",
-              "type": "ITEM_CHALLENGE_RESPONSE"
-            },
-            {
-              "prompt": "Avionics Master",
-              "expectation": "ON",
-              "type": "ITEM_CHALLENGE_RESPONSE"
-            }
-          ]
-        }
-      ],
-      "category": "abnormal"
-    },
-    {
-      "title": "Emergency",
+      "title": "Emergency Procedures",
       "checklists": [
         {
           "title": "Engine Failure During T/O Roll",
@@ -1205,7 +1208,7 @@
           "items": [
             {
               "prompt": "Airspeed",
-              "expectation": "65 KIAS",
+              "expectation": "70 KIAS",
               "type": "ITEM_CHALLENGE_RESPONSE"
             },
             {
@@ -1214,7 +1217,7 @@
               "type": "ITEM_CHALLENGE_RESPONSE"
             },
             {
-              "prompt": "Fuel Selector",
+              "prompt": "Fuel Shutoff Valve",
               "expectation": "OFF",
               "type": "ITEM_CHALLENGE_RESPONSE"
             },
@@ -1234,18 +1237,18 @@
               "type": "ITEM_CHALLENGE_RESPONSE"
             },
             {
-              "prompt": "Land (below 1000' agl)",
+              "prompt": "Land (< 1000' agl)",
               "expectation": "STRAIGHT AHEAD",
               "type": "ITEM_CHALLENGE_RESPONSE"
             }
           ]
         },
         {
-          "title": "Engine Failure in Flight (Restart)",
+          "title": "Engine Failure In Flight-Restart",
           "items": [
             {
               "prompt": "Airspeed",
-              "expectation": "65 KIAS",
+              "expectation": "70 KIAS",
               "type": "ITEM_CHALLENGE_RESPONSE"
             },
             {
@@ -1264,13 +1267,13 @@
               "type": "ITEM_CHALLENGE_RESPONSE"
             },
             {
-              "prompt": "Ignition Switch (Prop spinning)",
-              "expectation": "BOTH",
+              "prompt": "Propeller",
+              "expectation": "FORWARD",
               "type": "ITEM_CHALLENGE_RESPONSE"
             },
             {
-              "prompt": "Ignition Switch (Prop stopped)",
-              "expectation": "ENGAGE",
+              "prompt": "Ignition Switch",
+              "expectation": "BOTH/ENGAGE",
               "type": "ITEM_CHALLENGE_RESPONSE"
             },
             {
@@ -1281,32 +1284,18 @@
           ]
         },
         {
-          "title": "Engine Fire During Start",
+          "title": "Forced Landing",
           "items": [
             {
-              "prompt": "Cranking",
-              "expectation": "CONTINUE",
+              "prompt": "Seat Backs/Belts",
+              "expectation": "UPRIGHT/SECURE",
               "type": "ITEM_CHALLENGE_RESPONSE"
             },
             {
-              "prompt": "If Engine Starts",
-              "type": "ITEM_TITLE"
-            },
-            {
-              "prompt": "Throttle",
-              "expectation": "1700 RPM",
+              "prompt": "Airspeed",
+              "expectation": "70 KIAS",
               "type": "ITEM_CHALLENGE_RESPONSE"
             },
-            {
-              "prompt": "Mixture",
-              "expectation": "IDLE CUTOFF",
-              "type": "ITEM_CHALLENGE_RESPONSE"
-            }
-          ]
-        },
-        {
-          "title": "Engine Fire In Flight",
-          "items": [
             {
               "prompt": "Mixture",
               "expectation": "IDLE CUT OFF",
@@ -1315,6 +1304,61 @@
             {
               "prompt": "Fuel Selector",
               "expectation": "OFF",
+              "type": "ITEM_CHALLENGE_RESPONSE"
+            },
+            {
+              "prompt": "Ignition Switch",
+              "expectation": "OFF",
+              "type": "ITEM_CHALLENGE_RESPONSE"
+            },
+            {
+              "prompt": "Flaps",
+              "expectation": "AS REQUIRED",
+              "type": "ITEM_CHALLENGE_RESPONSE"
+            },
+            {
+              "prompt": "Transponder (7700)",
+              "expectation": "SET",
+              "type": "ITEM_CHALLENGE_RESPONSE"
+            },
+            {
+              "prompt": "ATC (Emergency)",
+              "expectation": "DECLARE",
+              "type": "ITEM_CHALLENGE_RESPONSE"
+            },
+            {
+              "prompt": "Master Switch (Landing Assured)",
+              "expectation": "OFF",
+              "type": "ITEM_CHALLENGE_RESPONSE"
+            },
+            {
+              "prompt": "Doors",
+              "expectation": "UNLATCHED",
+              "type": "ITEM_CHALLENGE_RESPONSE"
+            },
+            {
+              "prompt": "Touchdown",
+              "expectation": "TAIL LOW",
+              "type": "ITEM_CHALLENGE_RESPONSE"
+            },
+            {
+              "prompt": "Breaks",
+              "expectation": "APPLY",
+              "type": "ITEM_CHALLENGE_RESPONSE"
+            }
+          ]
+        },
+        {
+          "title": "Engine Fire In Flight",
+          "items": [
+            {
+              "prompt": "Fuel Selector",
+              "expectation": "OFF",
+              "type": "ITEM_CHALLENGE_RESPONSE"
+            },
+            {
+              "prompt": "Mixture",
+              "expectation": "IDLE CUT OFF",
               "type": "ITEM_CHALLENGE_RESPONSE"
             },
             {
@@ -1415,66 +1459,41 @@
           ]
         },
         {
-          "title": "Forced Landing",
+          "title": "Ammeter (Excessive Charge)",
           "items": [
             {
-              "prompt": "Seat Backs/Belts",
-              "expectation": "UPRIGHT/SECURE",
-              "type": "ITEM_CHALLENGE_RESPONSE"
-            },
-            {
-              "prompt": "Airspeed",
-              "expectation": "65 KIAS",
-              "type": "ITEM_CHALLENGE_RESPONSE"
-            },
-            {
-              "prompt": "Mixture",
-              "expectation": "IDLE CUT OFF",
-              "type": "ITEM_CHALLENGE_RESPONSE"
-            },
-            {
-              "prompt": "Fuel Selector",
+              "prompt": "Alternator",
               "expectation": "OFF",
               "type": "ITEM_CHALLENGE_RESPONSE"
             },
             {
-              "prompt": "Ignition Switch",
+              "prompt": "Nonessential Electrical",
+              "expectation": "OFF",
+              "type": "ITEM_CHALLENGE_RESPONSE"
+            }
+          ]
+        },
+        {
+          "title": "'VOLTS' Illuminated",
+          "items": [
+            {
+              "prompt": "Avionics Master",
               "expectation": "OFF",
               "type": "ITEM_CHALLENGE_RESPONSE"
             },
             {
-              "prompt": "Flaps",
-              "expectation": "AS REQUIRED",
+              "prompt": "Alternator Circuit Breaker",
+              "expectation": "CHECK IN",
               "type": "ITEM_CHALLENGE_RESPONSE"
             },
             {
-              "prompt": "Transponder (7700)",
-              "expectation": "SET",
+              "prompt": "Master Switch",
+              "expectation": "OFF then ON",
               "type": "ITEM_CHALLENGE_RESPONSE"
             },
             {
-              "prompt": "ATC (Emergency)",
-              "expectation": "DECLARE",
-              "type": "ITEM_CHALLENGE_RESPONSE"
-            },
-            {
-              "prompt": "Master Switch (Landing Assured)",
-              "expectation": "OFF",
-              "type": "ITEM_CHALLENGE_RESPONSE"
-            },
-            {
-              "prompt": "Doors",
-              "expectation": "UNLATCHED",
-              "type": "ITEM_CHALLENGE_RESPONSE"
-            },
-            {
-              "prompt": "Touchdown",
-              "expectation": "TAIL LOW",
-              "type": "ITEM_CHALLENGE_RESPONSE"
-            },
-            {
-              "prompt": "Brakes",
-              "expectation": "APPLY",
+              "prompt": "Avionics Master",
+              "expectation": "ON",
               "type": "ITEM_CHALLENGE_RESPONSE"
             }
           ]
